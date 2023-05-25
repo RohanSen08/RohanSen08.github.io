@@ -3,16 +3,29 @@
        <link rel="stylesheet" href="stylesheet.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
+    <script>
+            function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+        </script>
     </head>
     <body>
-        <ul length="100%">
-            <li><img src="python%20logo.png" width="200"></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="PythonBasics.html">Basic Python</a></li>
-            <li><a href="PythonAI.html">Python for AI</a></li>
-            <li><a href="PythonForTheWeb.html">Python for the Web</a></li>
-            <li><a class="active" href="PythonForChatbots.html">Python for Chatbots</a></li>
-          </ul>
+
+        <div class="topnav" id="myTopnav">
+<a href="index.html">Home</a>
+  <a href="PythonBasics.html">Basic Python</a>
+  <a href="PythonAI.html">Python for AI</a>
+  <a href="PythonForTheWeb.html">Python for the Web</a>
+  <a class="active" href="PythonForChatbots.html">Python for Chatbots</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
     <h1>Python for Chatbots</h1>
     <p>In <a href="PythonAI.html">Python for AI</a>, one use of AI mentioned was for chatbots. Such chatbots are possible using Python.</p>
     <h1>What is a chatbot?</h1>

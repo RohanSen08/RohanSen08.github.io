@@ -3,16 +3,29 @@
         <link rel="stylesheet" href="stylesheet.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+            function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+        </script>
     </head>
     <body>
-        <ul length="100%">
-            <li><img src="python%20logo.png" width="200"></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="PythonBasics.html">Basic Python</a></li>
-            <li><a href="PythonAI.html">Python for AI</a></li>
-            <li><a href="PythonForTheWeb.html">Python for the Web</a></li>
-            <li><a href="PythonForChatbots.html">Python for Chatbots</a></li>
-          </ul>
+
+        <div class="topnav" id="myTopnav">
+<a href="index.html">Home</a>
+  <a class="active" href="PythonBasics.html">Basic Python</a>
+  <a href="PythonAI.html">Python for AI</a>
+  <a href="PythonForTheWeb.html">Python for the Web</a>
+  <a href="PythonForChatbots.html">Python for Chatbots</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
         <h1>Basics of Python</h1>
         <p>Unlike many programming languages, Python syntax is based on indentation and the position of a snippet of code within another snippet of code is based on whether it is indented. When using Python you should always be attentive of spacing as it will determine if your code will work.</p>
         <script src="https://gist.github.com/potatobob/aa6b2d704642b6a1ab88b2ccea41c6da.js"></script>

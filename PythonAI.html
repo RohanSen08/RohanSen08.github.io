@@ -3,16 +3,30 @@
       <link rel="stylesheet" href="stylesheet.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+        </script>
     </head>
     <body>
-        <ul length="100%">
-            <li><img src="python%20logo.png" width="200"></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="PythonBasics.html">Basic Python</a></li>
-            <li><a class="active" href="PythonAI.html">Python for AI</a></li>
-            <li><a href="PythonForTheWeb.html">Python for the Web</a></li>
-            <li><a href="PythonForChatbots.html">Python for Chatbots</a></li>
-          </ul>
+
+        <div class="topnav" id="myTopnav">
+<a  href="index.html">Home</a>
+  <a href="PythonBasics.html">Basic Python</a>
+  <a class="active" href="PythonAI.html">Python for AI</a>
+  <a href="PythonForTheWeb.html">Python for the Web</a>
+  <a href="PythonForChatbots.html">Python for Chatbots</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
         <h1>Python For AI</h1>
         <h1>Frameworks</h1>
         <p>Note: for the sake of simplicity, this page will only outline the basics of AI in Python.</p>
