@@ -1,45 +1,123 @@
-<html>
-    <head>
-      <link rel="stylesheet" href="stylesheet.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script>
-            function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-        </script>
-    </head>
-    <body>
-
-        <div class="topnav" id="myTopnav">
-<a class="active" href="index.html">Home</a>
-  <a href="PythonBasics.html">Basic Python</a>
-  <a href="PythonAI.html">Python for AI</a>
-  <a href="PythonForTheWeb.html">Python for the Web</a>
-  <a href="PythonForChatbots.html">Python for Chatbots</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Sen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+        }
+        .pfp {
+            max-width: 100%;
+            height: auto;
+        }
+        .captioned-image {
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .btn-group a {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">Rohan Sen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="coding.html">Coding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Robotics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Outreach</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Travel</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <div class="row align-items-center">
+        <div class="col-md-4 text-center">
+            <h1>Hi, I'm Rohan Sen</h1>
+            <img alt="Profile Picture" class="rounded-circle pfp" src="static/ProfilePhoto.jpg">
+        </div>
+        <div class="col-md-8">
+            <div class="btn-group">
+                <a href="https://github.com/RohanSen08" target="_blank" class="btn btn-outline-primary">My GitHub</a>
+                <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" target="_blank" class="btn btn-outline-primary">My LinkedIn</a>
+                <a href="https://codeforces.com/profile/rohan_sen" target="_blank" class="btn btn-outline-primary">My Codeforces</a>
+            </div>
+            <p class="mt-3">
+                I'm a student at Stuyvesant High School in NYC with a passion for coding, robotics, history, travel, and much more.
+                I'm the captain of a world-level robotics team (#8721 Mighty Mechanics), a member of my school's NHS chapter, a ModelUN delegate for my school, a student at Columbia's SHP program, and an active participant in numerous clubs.
+                In my free time, I teach the basics of coding to elementary school students, work on passion projects, participate in competitive coding competitions, and watch travel documentaries to learn more about the world.
+            </p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-4 captioned-image">
+            <img src="static/IMG_2753.jpg" class="img-fluid" alt="Image 1">
+            <p class="text-center">Teaching a class of 4th graders the basics of robotics</p>
+        </div>
+        <div class="col-lg-4 captioned-image">
+            <img src="static/IMG_9496.jpg" class="img-fluid" alt="Image 2">
+            <p class="text-center">The Mighty Mechanics and our robot at the 2024 FTC World Championships.</p>
+        </div>
+        <div class="col-lg-4 captioned-image">
+            <img src="static/IMG_0707.jpg" class="img-fluid" alt="Image 2">
+            <p class="text-center">A late-night photo in Samarkand, Uzbekistan</p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-4 captioned-image">
+            <img src="static/IMG_7863.jpg" class="img-fluid" alt="Image 1">
+            <p class="text-center">Presenting a machine learning Project as a part of Columbia's SHAPE program</p>
+        </div>
+        <div class="col-lg-4 captioned-image">
+            <img src="static/IMG_2430.jpg" class="img-fluid" alt="Image 2">
+            <p class="text-center">My induction into Stuyvesant's National Honors Society chapter.</p>
+        </div>
+        <div class="col-lg-4 captioned-image">
+            <img src="static/IMG_5172.jpg" class="img-fluid" alt="Image 2">
+            <p class="text-center">My freshman year visit to the General Assembly of the United Nations.</p>
+        </div>
+    </div>
 </div>
-        <h1>Home</h1>
-        <img src="python%20logo.png">
-        <p class="about">Python is one of the most popular programming language and can be used for a plethora of applications, ranging from web apps and their backends, AI and neural networks, robotics, and the most simple of applications. This website aims to educate people on Python and its interesting and useful applications.</p>
-        <p class="about">Python is available on most desktop and server side platforms and can even be used for mobile!</p>
-        <p class="about">This website aims to educate semi-advanced computer programmers on the wonders of Python and its applications.</p>
-        <p>The first page is this page, which provides information on the site. The second page will discuss the basics of Python, which are needed to understand the majority of the site. The third page will discuss the basics of AI and deep learning and Python's role in it. The fourth page will discuss the use of Python in web backends and how to implement it in Python. Lastly, the fifth page will discuss the use of Python for chatbots and how to implement it.</p>
-        <p><b>NOTE: for all Python libraries mentioned in this site, it is assumed that the library has been installed already, whether through pip, apt-get, or any other method.</b></p>
-        <h1>More information</h1>
-        <div>
-        <a href="https://www.python.org/" target="_blank">Python Official Website</a>
-        </div>
-        <div>
-        <a href="https://www.w3schools.com/python/" target="_blank">W3 Schools Python</a>
-        </div>
-    </body>
+<footer class="footer mt-auto">
+    <div class="container text-center">
+        <p>Personal Email: <a href="mailto:rohanhenrysen@gmail.com" class="text-white">rohanhenrysen@gmail.com</a></p>
+        <p>Phone Number: <a href="tel:929-229-9487" class="text-white">+1 (929) 229-9487</a></p>
+    </div>
+</footer>
+</body>
 </html>

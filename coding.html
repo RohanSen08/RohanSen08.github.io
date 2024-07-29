@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Sen - Coding</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+            padding: 20px;
+        }
+        .pfp {
+            max-width: 100%;
+            height: auto;
+        }
+        .captioned-image {
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .btn-group a {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1em;
+            color: #343a40;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        .list-item::before {
+            content: "• ";
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">Rohan Sen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="coding.html">Coding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Robotics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Outreach</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Travel</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <h1>My Tech Stack</h1>
+            <p>I have been coding since the 5th grade and I have always had a passion for learning new things.
+                Over the course of these years, I have tried to push myself to learn new coding languages and improve
+                on existing skills. For me, programming is a tool that can be used to improve the world and create amazing
+                new things.
+            </p>
+            <ul>
+                <li class="list-item">Python
+                    <ul>
+                        <li class="list-item">Flask</li>
+                        <li class="list-item">SciKit Learn</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer class="footer mt-auto">
+    <div class="container text-center">
+        <p>Personal Email: <a href="mailto:rohanhenrysen@gmail.com" class="text-white">rohanhenrysen@gmail.com</a></p>
+        <p>Phone Number: <a href="tel:929-229-9487" class="text-white">+1 (929) 229-9487</a></p>
+    </div>
+</footer>
+</body>
+</html>
