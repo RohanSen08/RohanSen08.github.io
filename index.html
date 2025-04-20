@@ -1,118 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="noindex">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohan Sen</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        .container {
-            flex: 1;
-        }
-        .pfp {
-            max-width: 100%;
-            height: auto;
-        }
-        .captioned-image {
-            margin-bottom: 20px;
-        }
-        .footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .btn-group a {
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohan Sen | Student & Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2b55c7;
+      --secondary: #6c757d;
+      --dark: #212529;
+      --light: #f8f9fa;
+      --success: #28a745;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2b55c7 0%, #1a3baa 100%);
+      color: white;
+      padding: 6rem 0;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 80%;
+    }
+
+    .profile-img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      position: relative;
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 50px;
+      height: 4px;
+      background-color: var(--primary);
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .skill-card {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+
+    .skill-card:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .skill-card:hover i {
+      color: white;
+    }
+
+    .skill-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--primary);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -34px;
+      top: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      border: 4px solid white;
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 30px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a3baa;
+      border-color: #1a3baa;
+    }
+
+    .nav-link {
+      color: var(--dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 2rem 0;
+    }
+
+    .social-links a {
+      color: white;
+      margin-right: 15px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    .gallery-img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .badge {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 500;
+      padding: 5px 10px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border-radius: 20px;
+    }
+
+    .stats-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .stats-card h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .stats-card p {
+      font-size: 1.1rem;
+      color: var(--secondary);
+    }
+
+    .caption {
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      width: 100%;
+      display: block;
+      padding: 0 5px;
+    }
+  </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Rohan Sen</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="coding.html">Coding</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="robotics.html">Robotics</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="outreach.html">Outreach</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="travel.html">Travel</a>
-                </li>
-            </ul>
-        </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Rohan Sen</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#robotics">Robotics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#travel">Travel</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
-<div class="container mt-4">
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="container">
     <div class="row align-items-center">
-        <div class="col-md-4 text-center">
-            <h1>Hi, I'm Rohan Sen</h1>
-            <img alt="Profile Picture" class="rounded-circle pfp" src="static/PHOTO-2024-08-07-23-00-30.jpg">
+      <div class="col-lg-8">
+        <h1>Hi, I'm Rohan Sen</h1>
+        <p class="mb-4">Student at Stuyvesant High School, co-captain of a world-level robotics team, programmer, and passionate traveler.</p>
+        <div class="d-flex">
+          <a href="https://github.com/RohanSen08" class="btn btn-light me-3" target="_blank">
+            <i class="fab fa-github me-2"></i>GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" class="btn btn-light me-3" target="_blank">
+            <i class="fab fa-linkedin me-2"></i>LinkedIn
+          </a>
+          <a href="https://codeforces.com/profile/rohan_sen" class="btn btn-light" target="_blank">
+            <i class="fas fa-code me-2"></i>Codeforces
+          </a>
         </div>
-        <div class="col-md-8">
-            <div class="btn-group">
-                <a href="https://github.com/RohanSen08" target="_blank" class="btn btn-outline-primary">My GitHub</a>
-                <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" target="_blank" class="btn btn-outline-primary">My LinkedIn</a>
-                <a href="https://codeforces.com/profile/rohan_sen" target="_blank" class="btn btn-outline-primary">My Codeforces</a>
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="static/PHOTO-2024-08-07-23-00-30.jpg" alt="Rohan Sen" class="profile-img" style="margin: 0 auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <p>I'm an 11th-grade student at Stuyvesant High School in NYC with a passion for coding, robotics, history, travel, and much more. My academic journey has been shaped by:</p>
+        <ul>
+          <li>A strong academic record with a GPA in the high 90s</li>
+          <li>Scored 1510/1520 on the PSAT and will take SAT in March 2025</li>
+          <li>Taken 6 AP courses including AP Bio, World History, US History, Computer Science, Environmental Science, and Precalculus</li>
+          <li>Member of Arista (National Honor Society) at Stuyvesant High School</li>
+        </ul>
+        <p>I'm the co-captain of #8721 Mighty Mechanics (a world-level robotics team), a member of my school's National Honor Society chapter (ARISTA), Stuy ARISTA's Web Development team, a ModelUN delegate for my school, a student at Columbia's Science Honors Program, and an active participant in numerous clubs.</p>
+        <p>In my free time, I teach coding to elementary school students, work on passion projects, participate in competitive coding competitions, and explore my interest in international relations and politics.</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="stats-card">
+              <h2>20+</h2>
+              <p>Countries Visited</p>
             </div>
-            <p class="mt-3">
-                I'm a student at Stuyvesant High School in NYC with a passion for coding, robotics, history, travel, and much more.
-                I'm the co-captain of a world-level robotics team (#8721 Mighty Mechanics), a member of my school's National Honor Society chapter (ARISTA), Stuy ARISTA's Web Development team, a ModelUN delegate for my school, a student at Columbia's Science Honors Program, and an active participant in numerous clubs.
-                In my free time, I teach the basics of coding to elementary school students, work on passion projects, participate in competitive coding competitions, and watch travel documentaries to learn more about the world.
-            </p>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="stats-card">
+              <h2>8+</h2>
+              <p>Programming Languages</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="stats-card">
+              <h2>6</h2>
+              <p>AP Courses</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="stats-card">
+              <h2>4.0</h2>
+              <p>Unweighted GPA</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="section bg-light" id="education">
+  <div class="container">
+    <h2 class="section-title">Education & Academic Programs</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-date">Current</p>
+        <h4>Stuyvesant High School</h4>
+        <p>11th Grade, New York, NY</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">2024 - Present</p>
+        <h4>Columbia University's Science Honors Program</h4>
+        <p>Introduction to Algorithms</p>
+        <p>Introduction to Quantitative Biotechnology</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Summer 2024</p>
+        <h4>Columbia University SHAPE Summer Program</h4>
+        <p>Competitive Programming</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Summer 2024</p>
+        <h4>Hofstra University Summer Science Research Program</h4>
+        <p>Engineering & Robotics</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Sept 2023 - Current</p>
+        <h4>Harvard University EdX's Computer Science for AI Professional Certificate</h4>
+        <p>CS50 (Intro to Computer Science) and CS50 (Into to Artificial Intelligence with Python)</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Summer 2023</p>
+        <h4>Brown University Summer STEM Program</h4>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Summer 2022</p>
+        <h4>Java course at Adelphi University</h4>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Fall 2022</p>
+        <h4>Columbia University Systems Biology Initiative</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section" id="skills">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="skill-card">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+          <p>Flask, Matplotlib, SciKit, API integration</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card">
+          <i class="fab fa-java"></i>
+          <h3>Java</h3>
+          <p>FTC SDK, Advanced pathfinding with ejml</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>React, NodeJS, Frontend development</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card">
+          <i class="fab fa-swift"></i>
+          <h3>Swift</h3>
+          <p>SwiftUI, CoreData, HTTP Networking</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <h3>Web Development</h3>
+          <p>HTML/CSS, Bootstrap, jQuery</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card">
+          <i class="fab fa-linux"></i>
+          <h3>Linux & C++</h3>
+          <p>BASH, SQL, Ubuntu, Docker, Embedded Programming</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects/Achievements Section -->
+<section class="section bg-light" id="projects">
+  <div class="container">
+    <h2 class="section-title">Achievements & Entrepreneurial Experience</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">AI Education Startup</h4>
+            <p class="card-text">Co-Founder of an AI based education start-up focused on customized and targeted AI generated learning content for high school and college students.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">FTC Robotics World Championships</h4>
+            <p class="card-text">Co-lead Programmer of FTC Robotics Team (representing NYC) at the First Robotics World Championships in Houston, TX (2024).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">NYC Robotics Champion</h4>
+            <p class="card-text">Co-lead Programmer of FTC Robotics NYC Champion Robotics Team (Mighty Mechanics) - 2024.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">National Honor Society</h4>
+            <p class="card-text">Admitted as a sophomore (2023-ongoing) to Arista, Stuyvesant's chapter of the National Honor Society.</p>
+            <div class="text-center">
+              <img src="static/IMG_2430.jpg" class="img-fluid rounded mt-3" alt="National Honor Society Induction" style="max-width: 100%;">
+              <p class="caption">My induction into Stuyvesant's National Honor Society chapter.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Volunteer Section -->
+<section class="section" id="volunteer">
+  <div class="container">
+    <h2 class="section-title">Volunteer Experience</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>American Cancer Society</h4>
+            <p>Student volunteer for Breast Cancer Walk</p>
+          </div>
+          <div class="timeline-item">
+            <h4>National Museum of Mathematics (NY)</h4>
+            <p>Student volunteer for various math programs</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Robotics and Coding Instructor</h4>
+            <p>Teaching to Girl Scouts and hosting workshops to 300+ elementary students </p>
+          </div>
+          <div class="timeline-item">
+            <h4>Peer Tutor</h4>
+            <p>Computer sciences tutoring at Stuyvesant HS</p>
+          </div>
+          <div class="timeline-item">
+            <h4>PS 117 (Public Elementary School)</h4>
+            <p>Conducting coding sessions and robotics demos for 2nd, 3rd, and 4th graders</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Web Development team Co-Leader</h4>
+            <p>ARISTA (Stuy's National Honor Society)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <div class="mb-4">
+              <img src="static/PHOTO-2024-08-12-17-21-56.jpg" class="img-fluid rounded gallery-img" alt="Teaching robotics">
+              <p class="caption">Teaching a class of 3rd graders the basics of robotics, using my robotics team's World Championship bot.</p>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_2699.jpg" class="img-fluid rounded gallery-img" alt="Teaching coding">
+              <p class="caption">Teaching a class of 4th graders the basics of coding and algorithms.</p>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_6962.jpg" class="img-fluid rounded gallery-img" alt="With school principal">
+              <p class="caption">Me and the principal of PS117 in Briarwood, Queens.</p>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_2753.jpg" class="img-fluid rounded gallery-img" alt="Teaching robotics">
+              <p class="caption">Teaching a class of 4th graders the basics of robotics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Robotics Section -->
+<section class="section bg-light" id="robotics">
+  <div class="container">
+    <h2 class="section-title">Robotics</h2>
+    <div class="row mb-4">
+      <div class="col-lg-6">
+        <h3>My Journey</h3>
+        <p>My journey with FIRST robotics and the Forest Hills Robotics League started over half a decade ago when I became a member of an FLL (First LEGO League) team. I have remained a member of the FIRST community since and as a high schooler I now participate in FTC (First Tech Challenge).</p>
+
+        <h3 class="mt-4">My Team</h3>
+        <p>I am proud to be a member and the co-captain of team <strong>#8721 Mighty Mechanics</strong>. We're a community-based FTC team based out of Forest Hills, Queens. Over the past decade, the Mighty Mechs have built a strong reputation in the NYC FIRST community.</p>
+        <p>I first joined the Mighty Mechs at the start of the '23 season and since then I have climbed to the rank of co-captain. Our team prides itself on our community outreach and routinely wins the FTC Connect Award at competitions. In March 2024, we advanced to the World Championships for FTC and competed in Houston with teams from all over the world.</p>
+      </div>
+      <div class="col-lg-6">
+        <h3>My Skillset</h3>
+        <p>I am the head programmer of my team and I work in Java using the FTC SDK. My work involving our robot's autonomous capabilities has given me significant experience working with Linear Algebra and Calculus. More importantly, my work requires me to have great teamworking skills, and challenges me to problem-solve when things do not work on the first try.</p>
+
+        <div class="row mt-4">
+          <div class="col-md-6 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_9496.jpg" class="img-fluid rounded gallery-img" alt="FTC World Championships">
+              <p class="caption">The Mighty Mechanics and our robot at the 2024 FTC World Championships.</p>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_5370.jpg" class="img-fluid rounded gallery-img" alt="Working on robot arm">
+              <p class="caption">Working on our robot's robotic arm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Travel Section -->
+<section class="section" id="travel">
+  <div class="container">
+    <h2 class="section-title">Travel</h2>
+    <div class="row">
+      <div class="col-lg-5">
+        <p>Travelling is an amazing way to experience unique and different cultures around the world and meet new people. I am very grateful that I have had the opportunity to travel extensively with my family since a young age.</p>
+        <p>When I travel I try to spend time soaking in the local culture and cuisine of wherever I may be, not just the tourist traps. I have visited over 20 countries all over the world. I believe that my experiences in each one has helped to shape me into an open-minded person.</p>
+      </div>
+      <div class="col-lg-7">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_7530.jpg" class="img-fluid rounded gallery-img" alt="Travel map">
+              <p class="caption">A map of everywhere I have been to.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_7266.jpg" class="img-fluid rounded gallery-img" alt="Kolkata, India">
+              <p class="caption">Connecting with my heritage in Kolkata, India.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_1249.jpg" class="img-fluid rounded gallery-img" alt="Tashkent Metro">
+              <p class="caption">Posing with a Soviet-era metro car in the beautiful Tashkent Metro.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_4234.jpg" class="img-fluid rounded gallery-img" alt="Petronas Towers">
+              <p class="caption">A selfie with the Petronas Twin Towers in Kuala Lumpur.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_9680.jpg" class="img-fluid rounded gallery-img" alt="Black Sea">
+              <p class="caption">A stormy day by the Black Sea.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="mb-4">
+              <img src="static/IMG_0707.jpg" class="img-fluid rounded gallery-img" alt="Samarkand, Uzbekistan">
+              <p class="caption">A late-night photo in Samarkand, Uzbekistan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interests Section -->
+<section class="section bg-light" id="interests">
+  <div class="container">
+    <h2 class="section-title">Interests & Activities</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h4>School Activities</h4>
+            <ul>
+              <li>Member of Forest Hills Robotics FTC Team</li>
+              <li>Member of Stuyvesant HS Competitive Coding Team</li>
+              <li>Member of Stuyvesant HS AI club</li>
+              <li>Member of Stuyvesant HS Model United Nations (UN)</li>
+              <li>Member of Stuyvesant HS History Club</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h4>Personal Interests</h4>
+            <ul>
+              <li>Avid recreational tennis player and weight training</li>
+              <li>Music Enthusiast</li>
+              <li>Interested in International relations and politics</li>
+              <li>Traveled to 20+ countries in Asia, Europe, and Africa</li>
+              <li>Competitive programming and AI development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row mt-4">
-        <div class="col-lg-4 captioned-image">
-            <img src="static/IMG_2753.jpg" class="img-fluid" alt="Image 1">
-            <p class="text-center">Teaching a class of 4th graders the basics of robotics</p>
+      <div class="col-lg-4 text-center">
+        <div class="mb-4">
+          <img src="static/IMG_5172.jpg" class="img-fluid rounded gallery-img" alt="UN Visit">
+          <p class="caption">My freshman year visit to the General Assembly of the United Nations.</p>
         </div>
-        <div class="col-lg-4 captioned-image">
-            <img src="static/IMG_9496.jpg" class="img-fluid" alt="Image 2">
-            <p class="text-center">The Mighty Mechanics and our robot at the 2024 FTC World Championships.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="mb-4">
+          <img src="static/IMG_7863.jpg" class="img-fluid rounded gallery-img" alt="ML Project">
+          <p class="caption">Presenting a machine learning project at Columbia's SHAPE program.</p>
         </div>
-        <div class="col-lg-4 captioned-image">
-            <img src="static/IMG_0707.jpg" class="img-fluid" alt="Image 2">
-            <p class="text-center">A late-night photo in Samarkand, Uzbekistan</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="mb-4">
+          <img src="static/IMG_2413.jpg" class="img-fluid rounded gallery-img" alt="Airbus A330">
+          <p class="caption">Up close with an Airbus A330.</p>
         </div>
+      </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-lg-4 captioned-image">
-            <img src="static/IMG_7863.jpg" class="img-fluid" alt="Image 1">
-            <p class="text-center">Presenting a machine learning Project as a part of Columbia's SHAPE program</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>Rohan Sen</h5>
+        <p>Student, Developer, Robotics Enthusiast</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <div class="social-links">
+          <a href="https://github.com/RohanSen08" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
-        <div class="col-lg-4 captioned-image">
-            <img src="static/IMG_2430.jpg" class="img-fluid" alt="Image 2">
-            <p class="text-center">My induction into Stuyvesant's National Honor Society chapter.</p>
-        </div>
-        <div class="col-lg-4 captioned-image">
-            <img src="static/IMG_5172.jpg" class="img-fluid" alt="Image 2">
-            <p class="text-center">My freshman year visit to the General Assembly of the United Nations.</p>
-        </div>
+      </div>
     </div>
-</div>
-</body>
-</html>
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <p class="mb-0">&copy; 2025 Rohan Sen. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
