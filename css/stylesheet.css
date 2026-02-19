@@ -16,8 +16,8 @@ body {
 .hero {
     background: linear-gradient(135deg, #2b55c7 0%, #1a3baa 100%);
     color: white;
-    padding: 6rem 0;
-    margin-bottom: 2rem;
+    padding: 4.75rem 0;
+    margin-bottom: 1.25rem;
 }
 
 .hero h1 {
@@ -41,12 +41,12 @@ body {
 }
 
 .section {
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 .section-title {
     position: relative;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 700;
     display: inline-block;
 }
@@ -84,8 +84,8 @@ body {
 .skill-card {
     background-color: #f8f9fa;
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 16px;
+    margin-bottom: 16px;
     transition: all 0.3s;
 }
 
@@ -112,7 +112,7 @@ body {
 
 .timeline {
     position: relative;
-    padding-left: 30px;
+    padding-left: 24px;
 }
 
 .timeline::before {
@@ -127,13 +127,13 @@ body {
 
 .timeline-item {
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 22px;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -34px;
+    left: -28px;
     top: 3px;
     width: 10px;
     height: 10px;
@@ -180,7 +180,7 @@ body {
 footer {
     background-color: var(--dark);
     color: white;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .social-links a {
@@ -205,6 +205,22 @@ footer {
     width: 100%;
 }
 
+.zoomable-photo {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.zoomable-photo:hover {
+    transform: scale(1.01);
+}
+
+#lightboxImage {
+    max-height: 80vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
 .badge {
     background-color: var(--primary);
     color: white;
@@ -218,10 +234,10 @@ footer {
 .stats-card {
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
+    padding: 16px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .stats-card h2 {
@@ -240,8 +256,37 @@ footer {
     font-size: 0.9rem;
     text-align: center;
     color: var(--secondary);
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     width: 100%;
     display: block;
     padding: 0 5px;
+}
+
+.photo-placeholder {
+    height: 200px;
+    border: 2px dashed #b8c6ed;
+    border-radius: 10px;
+    background: #f6f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 14px;
+}
+
+.photo-placeholder i {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.photo-placeholder p {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.photo-placeholder small {
+    color: var(--secondary);
 }
