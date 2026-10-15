@@ -69,14 +69,17 @@
       <div class="col-lg-8">
         <h1>Hi, I'm Rohan Sen</h1>
         <p class="mb-4">
-          Carnegie Mellon University Class of 2030, FTC Team #8721 Mighty Mechanics captain, visiting scholar in health AI, and builder of robotics, medical AI, and education technology systems.
+          Information Systems and Computer Science student at Carnegie Mellon University (Class of 2030), research intern in health AI at the Feinstein Institutes for Medical Research, and former captain and lead programmer of FTC Team #8721 Mighty Mechanics.
         </p>
-        <div class="d-flex">
-          <a href="https://github.com/RohanSen08" class="btn btn-light me-3" target="_blank">
+        <div class="d-flex flex-wrap">
+          <a href="https://github.com/RohanSen08" class="btn btn-light me-3 mb-2" target="_blank">
             <i class="fab fa-github me-2"></i>GitHub
           </a>
-          <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" class="btn btn-light me-3" target="_blank">
+          <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" class="btn btn-light me-3 mb-2" target="_blank">
             <i class="fab fa-linkedin me-2"></i>LinkedIn
+          </a>
+          <a href="mailto:rohanhenrysen@gmail.com" class="btn btn-light me-3 mb-2">
+            <i class="fas fa-envelope me-2"></i>Email
           </a>
         </div>
       </div>
@@ -94,30 +97,34 @@
     <div class="row">
       <div class="col-lg-6">
         <p>
-          I’m a Stuyvesant High School graduate and incoming Carnegie Mellon student interested in
-          artificial intelligence, robotics, and software systems with real-world impact.
+          I’m a student at Carnegie Mellon University pursuing a B.S. in Information Systems with an
+          additional major in Computer Science, and a 2026 graduate of Stuyvesant High School. I’m
+          interested in artificial intelligence, robotics, and software systems with real-world impact.
         </p>
         <p>
           My work spans medical AI research, autonomous robotics, full-stack web development, and
-          STEM education. I have built deep learning pipelines for chest X-ray analysis, custom Java
-          motion-planning libraries for FTC robotics, and web platforms used by students and volunteers.
+          STEM education. I have built a multi-model deep learning ensemble for chest X-ray pathology
+          classification, a custom Java motion-control library for FTC robotics, and web platforms used
+          by hundreds of students.
         </p>
         <ul>
-          <li>SAT: 1580 total — 800 Math, 780 English</li>
+          <li>CMU Coursework: Principles of Imperative Computation (15-122), Concepts of Mathematics (21-127), Reasoning with Data (36-200)</li>
+          <li>Stuyvesant GPA: 4.0</li>
+          <li>SAT: 1570 total — 800 Math, 770 Reading &amp; Writing</li>
           <li>AP Coursework: Biology, World History, Environmental Science, US History, Computer Science, Pre-Calculus, Calculus BC, Macroeconomics, Microeconomics</li>
           <li>Honors Classes: Honors Chemistry, Honors Physics</li>
           <li>Advanced Electives: Software Development, Systems Engineering, Oceanography</li>
           <li>Columbia University Science Honors Program, 11th and 12th grade</li>
         </ul>
         <p>
-          Programming experience: Python, TensorFlow, Java, JavaScript, React, Svelte, Swift, C++, SQL, Flask, NumPy, and Matplotlib.
+          Programming experience: Python, Java, C++, JavaScript, SQL, Swift, Bash, PyTorch, TensorFlow, NumPy, pandas, Databricks, React, Svelte, Flask, and Node.js.
         </p>
       </div>
       <div class="col-lg-6">
         <div class="row">
           <div class="col-md-6 mb-4">
             <div class="stats-card">
-              <h2>1580</h2>
+              <h2>1570</h2>
               <p>SAT Score</p>
             </div>
           </div>
@@ -155,10 +162,17 @@
         
         <div class="research-timeline">
           <div class="timeline-item">
-            <p class="timeline-date">Summer 2025 - Current</p>
-            <h4>Visiting Scholar | Feinstein Institutes for Medical Research (Northwell Health AI)</h4>
-            <p><strong>Project:</strong> Segmentation-Aided Dual-Scale Deep Learning for Chest X-ray Anomaly Detection</p>
-            <p>Mentored by Dr. Theo Zanos and Dr. Nabil Ettehadi. Built a dual-scale segmentation-aided architecture on NIH ChestX-ray14 with multi-head classification and a reproducible training pipeline.</p>
+            <p class="timeline-date">June 2025 - Present</p>
+            <h4>Research Intern | Feinstein Institutes for Medical Research, Northwell Health</h4>
+            <p><strong>Division of Health Artificial Intelligence</strong> — Mentors: Dr. Theo Zanos and Dr. Nabil Ettehadi</p>
+            <p><strong>Project:</strong> Multi-model deep learning ensemble for 14-label thoracic pathology classification on NIH ChestX-ray14</p>
+            <ul>
+              <li>Built a nine-model PyTorch ensemble on Databricks for 14-label thoracic pathology classification across 112K NIH ChestX-ray14 images.</li>
+              <li>Designed a hybrid CNN–Vision Transformer architecture with residual squeeze-and-excitation stem blocks, mixed-precision training, and a cosine learning-rate schedule with warmup.</li>
+              <li>Built a dual-scale U-Net with Performer attention and EfficientNet fusion; diagnosed a branch-dominance failure suppressing the decoder’s contribution to AUROC and proposed an auxiliary-loss correction.</li>
+              <li>Stacked the base models with scikit-learn and XGBoost meta-learners trained on exported embeddings; resolved solver convergence failures through pipeline-level feature scaling.</li>
+              <li>Integrating RAD-DINO, a chest X-ray–pretrained ViT, as a tenth base model and replacing per-class weighted BCE with Asymmetric Loss.</li>
+            </ul>
           </div>
 
           <div class="timeline-item">
@@ -192,22 +206,22 @@
       <div class="col-md-4">
         <div class="skill-card">
           <i class="fab fa-python"></i>
-          <h3>Python</h3>
-          <p>TensorFlow, Flask, NumPy, Matplotlib</p>
+          <h3>Python &amp; ML</h3>
+          <p>PyTorch, TensorFlow, NumPy, pandas, scikit-learn, XGBoost, Flask</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="skill-card">
           <i class="fab fa-java"></i>
           <h3>Java</h3>
-          <p>Android and FTC robotics development, autonomous algorithms</p>
+          <p>FTC robotics, motion control, localization, and autonomous algorithms</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="skill-card">
           <i class="fab fa-js"></i>
           <h3>JavaScript</h3>
-          <p>Svelte, React, Node, modern frontend workflows</p>
+          <p>React, Svelte, Node.js, modern frontend workflows</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -220,15 +234,15 @@
       <div class="col-md-4">
         <div class="skill-card">
           <i class="fas fa-code"></i>
-          <h3>C, C++</h3>
+          <h3>C++</h3>
           <p>Systems-focused programming and performance-minded implementation</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="skill-card">
           <i class="fas fa-database"></i>
-          <h3>SQL & Tooling</h3>
-          <p>SQL data workflows, reproducible project pipelines, rapid prototyping</p>
+          <h3>Data &amp; Tooling</h3>
+          <p>SQL, Databricks, Bash, Git, Linux</p>
         </div>
       </div>
     </div>
@@ -244,8 +258,9 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Mighty Mechanics FTC Team</h4>
-            <p class="card-text">Captain (2025, 2026) and Co-Lead Programmer (2024) for FTC Team #8721 Mighty Mechanics.</p>
-            <p class="card-text mb-0">Led design and software efforts, essential for reaching World Championships in 2024 and 2026, and built a custom holonomic PurePursuit motion library in Java.</p>
+            <p class="card-text">Captain &amp; Lead Programmer for FTC Team #8721 Mighty Mechanics (2023 - 2026).</p>
+            <p class="card-text">Led development of Mighty Motion, a custom Java motion-control library with localization, motion profiling, holonomic pure pursuit, PID pose control, and inverse kinematics. Built a Kalman-filtered odometry + AprilTag localizer and AutoAim, a turret angle solver and distance-to-RPM regression that reduced manual alignment to one action.</p>
+            <p class="card-text mb-0">NYC Champion and FTC Control Award winner (2026); World Championship qualifier (2024, 2026).</p>
           </div>
         </div>
       </div>
@@ -253,17 +268,17 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Stuyvesant ARISTA</h4>
-            <p class="card-text">Vice President of Web Development (2025, 2026), Web Committee Member (2024).</p>
-            <p class="card-text mb-0">Led a 15-person team building core ARISTA services in Svelte, supporting 200+ volunteers and 1,000+ tutees.</p>
+            <p class="card-text">Vice President of Web, elected (2025 - 2026); Web Committee Member (2024).</p>
+            <p class="card-text mb-0">Led a 15-person web team maintaining stuyarista.org and its backend for 200+ members and 1,000+ tutees. Wrote credit rollover verification scripts that automate membership requirement tracking, and rebuilt the interactive club fair map.</p>
           </div>
         </div>
       </div>
       <div class="col-md-6 mb-4">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">PS 117Q STEM Program</h4>
-            <p class="card-text">Volunteer and founder (September 2022 - Current).</p>
-            <p class="card-text mb-0">Organized STEM instruction in coding, math, and robotics for 2nd-4th graders and reached 250+ students.</p>
+            <h4 class="card-title">PS 117Q STEM Outreach Program</h4>
+            <p class="card-text">Program Lead &amp; Instructor (2022 - 2026).</p>
+            <p class="card-text mb-0">Led a four-year STEM outreach program at a NYC public elementary school, building the lesson plans and running hands-on coding and robotics sessions for 250 students.</p>
           </div>
         </div>
       </div>
@@ -272,7 +287,7 @@
           <div class="card-body">
             <h4 class="card-title">Gocogni.io</h4>
             <p class="card-text">Co-Founder & CTO (September 2024 - October 2025).</p>
-            <p class="card-text mb-0">Building AI-powered adaptive learning tools; key infrastructure developed with React.</p>
+            <p class="card-text mb-0">Built AI-powered adaptive learning tools; key infrastructure developed with React.</p>
             <div class="ratio ratio-16x9 rounded overflow-hidden">
               <video controls preload="metadata" poster="static/sequence-01-2-poster.jpg">
                 <source src="static/sequence-01-2.mp4" type="video/mp4">
@@ -303,8 +318,11 @@
         <div class="card-body">
           <h4 class="card-title">Robotics & Competitive Programming</h4>
           <ul class="mb-0">
-            <li>FIRST Inspire Robotics Dean’s List Semi-Finalist, NYC — 2025</li>
-            <li>FIRST Robotics World Championships Qualifier — Houston, 2024</li>
+            <li>FTC NYC Champion — 2026</li>
+            <li>FTC Control Award — 2026</li>
+            <li>FIRST Tech Challenge World Championship Qualifier — Houston, 2024 and 2026</li>
+            <li>FTC NYC Finalist — 2025</li>
+            <li>FIRST Dean’s List Semi-Finalist, NYC — 2025</li>
             <li>PClassic, University of Pennsylvania — 2024, 2025</li>
             <li>Cornell University High School Programming Contest — 2023, 2024, 2025</li>
           </ul>
@@ -323,12 +341,20 @@
       <div class="col-lg-6">
         <div class="timeline">
           <div class="timeline-item">
-            <h4>Stuyvesant ARISTA - VP of Web Development</h4>
-            <p>Led a 15-member web team and coordinated policy changes through executive council work.</p>
+            <h4>Stuyvesant ARISTA - VP of Web</h4>
+            <p>Led a 15-member web team maintaining stuyarista.org for 200+ members and coordinated policy changes through executive council work.</p>
           </div>
           <div class="timeline-item">
-            <h4>PS 117Q STEM Program - Volunteer & Founder</h4>
-            <p>Running coding, math, and robotics sessions for 2nd, 3rd, and 4th graders since September 2022.</p>
+            <h4>PS 117Q STEM Outreach Program - Program Lead &amp; Instructor</h4>
+            <p>Ran coding, math, and robotics sessions for 2nd, 3rd, and 4th graders from 2022 to 2026, building the lesson plans for the program.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>CS Peer Tutor - Stuyvesant High School</h4>
+            <p>Tutored fellow students in computer science.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>National Museum of Mathematics - Volunteer</h4>
+            <p>Volunteered with MoMath in New York City.</p>
           </div>
           <div class="timeline-item">
             <h4>Robotics Outreach</h4>
@@ -392,9 +418,16 @@
     <h2 class="section-title">Education & Academic Programs</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <p class="timeline-date">Expected Graduation: June 2026</p>
+        <p class="timeline-date">Expected Graduation: May 2030</p>
+        <h4>Carnegie Mellon University</h4>
+        <p>B.S. Information Systems, Computer Science (additional major)</p>
+        <p>Coursework: Principles of Imperative Computation (15-122), Concepts of Mathematics (21-127), Reasoning with Data (36-200)</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Graduated: June 2026</p>
         <h4>Stuyvesant High School</h4>
-        <p>New York, NY | SAT: 780 English, 800 Math</p>
+        <p>New York, NY | GPA: 4.0 | SAT: 1570 (800 Math, 770 Reading &amp; Writing)</p>
+        <p>AP Scholar with Distinction | National Merit Commended Student | College Board National Recognition Program</p>
         <p>AP: Biology, World History, Environmental Science, US History, Computer Science, Pre-Calculus, Calculus BC, Macroeconomics, Microeconomics</p>
         <p>Honors: Chemistry, Physics | Advanced Electives: Software Development, Systems Programming, Oceanography</p>
       </div>
@@ -430,12 +463,17 @@
         <p>My journey in FIRST began in FLL and evolved into FTC through the Forest Hills Robotics League. I have stayed in the FIRST community for years, growing from student programmer to team captain.</p>
 
         <h3 class="mt-4">My Team</h3>
-        <p>I am the captain of team <strong>#8721 Mighty Mechanics</strong> and previously served as co-lead programmer. Our community-based FTC team represents NYC in high-level competition and outreach.</p>
-        <p>In 2024, we advanced to the FTC World Championships in Houston. In 2025, I was recognized as a FIRST Inspire Robotics Dean's List Semi-Finalist (NYC).</p>
+        <p>From 2023 to 2026, I was captain and lead programmer of team <strong>#8721 Mighty Mechanics</strong>, a community-based FTC team that represents NYC in high-level competition and outreach.</p>
+        <p>We qualified for the FTC World Championship in Houston in 2024 and 2026, were NYC Finalists in 2025, and won the NYC Championship and the FTC Control Award in 2026. In 2025, I was recognized as a FIRST Dean's List Semi-Finalist (NYC).</p>
       </div>
       <div class="col-lg-6">
         <h3>My Skillset</h3>
-        <p>As lead software contributor, I develop autonomous systems in Java using the FTC SDK. I implemented a fully custom motion library including a holonomic PurePursuit algorithm, plus additional advanced robotics algorithms used in competition.</p>
+        <p>As lead programmer, I led development of <strong>Mighty Motion</strong>, a custom Java motion-control library that replaced open-source alternatives, with our own localization, motion profiling, holonomic pure pursuit, PID pose control, and inverse kinematics.</p>
+        <ul>
+          <li>Fused GoBILDA Pinpoint odometry with Limelight 3A AprilTag poses through parallel 1D Kalman filters into a reusable localizer, and isolated a Limelight firmware defect returning NaN rotations in near-head-on pose solutions.</li>
+          <li>Cut autonomous waypoint overshoot by regressing braking distance against velocity and decelerating pre-emptively.</li>
+          <li>Built AutoAim, deriving a quadratic distance-to-RPM regression and a turret angle solver that reduced manual alignment to one action.</li>
+        </ul>
 
         <div class="row mt-4">
           <div class="col-md-6 text-center">
@@ -456,75 +494,19 @@
   </div>
 </section>
 
-<!-- Travel Section -->
-<section class="section" id="travel">
-  <div class="container">
-    <h2 class="section-title">Travel Photos</h2>
-    <div class="row">
-      <div class="col-md-4 col-6">
-        <div class="text-center">
-            <div class="mb-4">
-              <img src="static/IMG_0707.jpg" class="img-fluid rounded gallery-img" alt="uz">
-              <p class="caption">Samarkand, Uzbekistan.</p>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="text-center">
-            <div class="mb-4">
-              <img src="static/IMG_2413.jpg" class="img-fluid rounded gallery-img" alt="a330">
-              <p class="caption">Airbus A330 engine.</p>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="text-center">
-            <div class="mb-4">
-              <img src="static/IMG_9680.jpg" class="img-fluid rounded gallery-img" alt="uz">
-              <p class="caption">Black Sea, Turkey.</p>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="text-center">
-            <div class="mb-4">
-              <img src="static/IMG_5172.jpg" class="img-fluid rounded gallery-img" alt="un">
-              <p class="caption">UN General Assembly.</p>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="text-center">
-            <div class="mb-4">
-              <img src="static/IMG_7266.jpg" class="img-fluid rounded gallery-img" alt="wb">
-              <p class="caption">Kolkata, India </p>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="text-center">
-            <div class="mb-4">
-              <img src="static/IMG_1249.jpg" class="img-fluid rounded gallery-img" alt="sb">
-              <p class="caption">Soviet metro car</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Footer -->
 <footer class="bg-dark text-white py-4">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <h5>Rohan Sen</h5>
-        <p>Incoming CMU Student, AI Researcher, and Robotics Programmer</p>
+        <p>CMU Student, AI Researcher, and Robotics Programmer</p>
       </div>
       <div class="col-md-6 text-md-end">
         <div class="social-links">
           <a href="https://github.com/RohanSen08" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:rohanhenrysen@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
