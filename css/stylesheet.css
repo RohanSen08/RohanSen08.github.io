@@ -283,7 +283,6 @@ footer {
 .pf {
     --primary-dark: #1a3baa;
     --primary-soft: #eef2fc;
-    --pf-text: #1d2330;
     --muted: #5b6475;
     --border: #e3e7ef;
     --pf-bg: #f7f8fb;
@@ -332,11 +331,6 @@ footer {
     margin: -26px -26px 20px; height: 210px; overflow: hidden; position: relative;
     border-bottom: 1px solid var(--border); border-radius: 12px 12px 0 0;
 }
-.pf .field {
-    background: var(--pf-bg); text-align: center;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-.pf .field svg { width: 160px; height: 160px; display: block; margin: 0 auto; }
 .pf .diagram {
     background: white; padding: 14px 16px 8px;
     display: flex; flex-direction: column; justify-content: center;
@@ -344,11 +338,6 @@ footer {
 .pf .diagram a { display: block; flex: 1; min-height: 0; }
 .pf .diagram img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .pf .feature-media > figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 8px; text-align: center; }
-.pf .field-bg { fill: var(--primary-soft); stroke: var(--border); stroke-width: 0.8; }
-.pf .field-grid line { stroke: white; stroke-width: 0.8; }
-.pf .spline { fill: none; stroke: var(--primary); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
-.pf .wp { fill: var(--pf-text); stroke: white; stroke-width: 1.2; }
-.pf .wp.start { fill: var(--primary-dark); }
 
 .pf .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .pf .tag {
@@ -402,5 +391,4 @@ footer {
     .pf .pf-grid, .pf .pf-stack { grid-template-columns: 1fr; }
     .pf .feature { padding: 22px; }
     .pf .feature-media { margin: -22px -22px 18px; height: 180px; }
-    .pf .field svg { width: 130px; height: 130px; }
 }
