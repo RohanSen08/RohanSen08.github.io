@@ -329,53 +329,143 @@ footer {
     color: #1a3baa;
 }
 
-/* Featured Work teaser */
-.featured-work {
-    padding-top: 2rem;
+/* Portfolio and skills sections (.pf scopes these styles) */
+.pf {
+    --primary-dark: #1a3baa;
+    --primary-soft: #eef2fc;
+    --pf-text: #1d2330;
+    --muted: #5b6475;
+    --border: #e3e7ef;
+    --pf-bg: #f7f8fb;
+    --pf-body: #343b4a;
+    scroll-margin-top: 70px;
 }
 
-.work-card {
-    color: inherit;
-    text-decoration: none;
-    overflow: hidden;
+.pf a { text-decoration: none; }
+.pf a:hover { text-decoration: underline; }
+.pf code { color: var(--pf-body); }
+.pf .pf-lead { font-size: 1.1rem; color: var(--pf-body); max-width: 760px; margin: 0 0 2.25rem; }
+.pf .pf-subhead { font-size: 1.4rem; font-weight: 700; margin: 0 0 0.35rem; }
+.pf .section-sub { color: var(--muted); margin: 0 0 1.5rem; }
+.pf .features + .pf-subhead { margin-top: 3rem; }
+
+/* Featured projects: two per row; .wide cards span the row with a sidebar */
+.pf .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.pf .feature {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: 80px;
+}
+.pf .features > .feature.wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 28px;
+}
+.pf .feature h3 { margin: 0 0 4px; font-size: 1.3rem; font-weight: 700; }
+.pf .role { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; }
+.pf .feature p { margin: 0 0 12px; color: var(--pf-body); }
+.pf .feature ul { margin: 0 0 4px; padding-left: 20px; color: var(--pf-body); }
+.pf .feature li { margin-bottom: 6px; }
+.pf .side {
+    margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); font-size: 0.9rem;
+    display: flex; flex-wrap: wrap; gap: 0 28px;
+}
+.pf .feature > div { margin-bottom: 18px; }
+.pf .features > .feature.wide > div { margin-bottom: 0; }
+.pf .features > .feature.wide .side {
+    margin-top: 0; padding: 0 0 0 24px; border-top: none; border-left: 1px solid var(--border); display: block;
+}
+.pf .side h4 {
+    margin: 0 0 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--muted);
+}
+.pf .side .block { margin-bottom: 4px; flex: 1 1 200px; }
+.pf .side .block + .block { flex: 0 1 auto; }
+.pf .side a { display: block; margin-bottom: 4px; font-weight: 500; }
+.pf .note { color: var(--muted); }
+.pf .feature-media {
+    margin: -26px -26px 20px; height: 210px; overflow: hidden; position: relative;
+    border-bottom: 1px solid var(--border); border-radius: 12px 12px 0 0;
+}
+.pf .field {
+    background: var(--pf-bg); text-align: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.pf .field svg { width: 160px; height: 160px; display: block; margin: 0 auto; }
+.pf .diagram {
+    background: white; padding: 14px 16px 8px;
+    display: flex; flex-direction: column; justify-content: center;
+}
+.pf .diagram a { display: block; flex: 1; min-height: 0; }
+.pf .diagram img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.pf .feature-media > figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 8px; text-align: center; }
+.pf .field-bg { fill: var(--primary-soft); stroke: var(--border); stroke-width: 0.8; }
+.pf .field-grid line { stroke: white; stroke-width: 0.8; }
+.pf .spline { fill: none; stroke: var(--primary); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.pf .wp { fill: var(--pf-text); stroke: white; stroke-width: 1.2; }
+.pf .wp.start { fill: var(--primary-dark); }
+
+.pf .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.pf .tag {
+    background: var(--primary-soft); color: var(--primary-dark);
+    font-size: 0.78rem; font-weight: 600; padding: 3px 9px; border-radius: 999px;
 }
 
-.work-card:hover {
-    color: inherit;
+/* Smaller project grid */
+.pf .pf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.pf .pf-card {
+    background: white; border: 1px solid var(--border); border-radius: 12px;
+    padding: 22px; display: flex; flex-direction: column; scroll-margin-top: 80px;
+}
+.pf .pf-card h3 { margin: 0 0 2px; font-size: 1.05rem; font-weight: 700; }
+.pf .pf-media {
+    margin: -22px -22px 18px; height: 210px; background: black;
+    border-radius: 12px 12px 0 0; overflow: hidden;
+}
+.pf .pf-media img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.pf .pf-media.video { display: block; position: relative; }
+.pf .pf-media.shot { display: block; background: var(--pf-bg); }
+.pf .pf-media.shot img { object-fit: cover; object-position: left center; }
+.pf .pf-media.video img { object-fit: cover; }
+.pf .pf-media .play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 56px; height: 56px; border-radius: 50%; background: rgba(0, 0, 0, 0.65);
+    color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+.pf .pf-media.video:hover .play { background: var(--primary); }
+.pf .pf-card .kind { color: var(--muted); font-size: 0.82rem; margin-bottom: 10px; }
+.pf .pf-card p { margin: 0 0 14px; font-size: 0.93rem; color: var(--pf-body); flex: 1; }
+.pf .pf-card .tags { margin-bottom: 12px; }
+.pf .pf-card .foot { font-size: 0.88rem; font-weight: 500; }
+.pf .pf-card .foot .note { font-weight: 400; }
+
+/* Skills by area */
+.pf .pf-stack { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.pf .stack-item {
+    background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px;
+}
+.pf .stack-item h3 { margin: 0 0 4px; font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.pf .stack-item h3 i { color: var(--primary); width: 18px; text-align: center; }
+.pf .stack-item p { margin: 0 0 10px; font-size: 0.88rem; color: var(--muted); }
+
+@media (max-width: 860px) {
+    .pf .features { grid-template-columns: 1fr; }
+    .pf .features > .feature.wide { display: flex; grid-column: auto; }
+    .pf .features > .feature.wide > div { margin-bottom: 18px; }
+    .pf .features > .feature.wide .side {
+        margin-top: auto; padding: 18px 0 0; border-left: none; border-top: 1px solid var(--border); display: flex;
+    }
+    .pf .pf-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.work-media {
-    height: 170px;
-    border-bottom: 1px solid #e3e7ef;
-}
-
-.work-media img {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.work-diagram { background: white; padding: 12px; }
-.work-diagram img { object-fit: contain; }
-.work-field { background: var(--light); padding: 12px; }
-.work-field img { object-fit: contain; }
-.work-shot img { object-fit: cover; object-position: left center; }
-.work-render { background: black; }
-.work-render img { object-fit: contain; }
-
-.work-card h5 {
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-}
-
-.work-card p {
-    font-size: 0.92rem;
-    color: #4a5160;
-    margin-bottom: 0.75rem;
-}
-
-.work-stack {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--primary);
+@media (max-width: 600px) {
+    .pf .pf-grid, .pf .pf-stack { grid-template-columns: 1fr; }
+    .pf .feature { padding: 22px; }
+    .pf .feature-media { margin: -22px -22px 18px; height: 180px; }
+    .pf .field svg { width: 130px; height: 130px; }
 }
