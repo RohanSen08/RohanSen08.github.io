@@ -74,42 +74,6 @@ body {
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.skill-card {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 16px;
-    transition: all 0.3s;
-}
-
-.skill-card:hover {
-    background-color: var(--primary);
-    color: white;
-}
-
-.skill-card i {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-.skill-card:hover i {
-    color: white;
-}
-
-.skill-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
 .timeline {
     position: relative;
     padding-left: 24px;
@@ -221,16 +185,6 @@ footer {
     object-fit: contain;
 }
 
-.badge {
-    background-color: var(--primary);
-    color: white;
-    font-weight: 500;
-    padding: 5px 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    border-radius: 20px;
-}
-
 .stats-card {
     background-color: white;
     border-radius: 10px;
@@ -260,35 +214,6 @@ footer {
     width: 100%;
     display: block;
     padding: 0 5px;
-}
-
-.photo-placeholder {
-    height: 200px;
-    border: 2px dashed #b8c6ed;
-    border-radius: 10px;
-    background: #f6f8ff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 12px;
-    margin-bottom: 14px;
-}
-
-.photo-placeholder i {
-    color: var(--primary);
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-}
-
-.photo-placeholder p {
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.photo-placeholder small {
-    color: var(--secondary);
 }
 
 /* Portfolio call-to-actions */
@@ -349,7 +274,7 @@ footer {
 .pf .section-sub { color: var(--muted); margin: 0 0 1.5rem; }
 .pf .features + .pf-subhead { margin-top: 3rem; }
 
-/* Featured projects: two per row; .wide cards span the row with a sidebar */
+/* Featured projects: two per row */
 .pf .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .pf .feature {
     background: white;
@@ -359,12 +284,6 @@ footer {
     display: flex;
     flex-direction: column;
     scroll-margin-top: 80px;
-}
-.pf .features > .feature.wide {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 28px;
 }
 .pf .feature h3 { margin: 0 0 4px; font-size: 1.3rem; font-weight: 700; }
 .pf .role { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; }
@@ -376,10 +295,6 @@ footer {
     display: flex; flex-wrap: wrap; gap: 0 28px;
 }
 .pf .feature > div { margin-bottom: 18px; }
-.pf .features > .feature.wide > div { margin-bottom: 0; }
-.pf .features > .feature.wide .side {
-    margin-top: 0; padding: 0 0 0 24px; border-top: none; border-left: 1px solid var(--border); display: block;
-}
 .pf .side h4 {
     margin: 0 0 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: 0.06em; color: var(--muted);
@@ -455,11 +370,6 @@ footer {
 
 @media (max-width: 860px) {
     .pf .features { grid-template-columns: 1fr; }
-    .pf .features > .feature.wide { display: flex; grid-column: auto; }
-    .pf .features > .feature.wide > div { margin-bottom: 18px; }
-    .pf .features > .feature.wide .side {
-        margin-top: auto; padding: 18px 0 0; border-left: none; border-top: 1px solid var(--border); display: flex;
-    }
     .pf .pf-grid { grid-template-columns: repeat(2, 1fr); }
 }
 

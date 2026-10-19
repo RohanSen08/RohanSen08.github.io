@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNZE81NJWM"></script>
   <script>
@@ -15,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rohan Sen | Student & Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/stylesheet.css">
@@ -40,22 +39,19 @@
           <a class="nav-link" href="#research">Research</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#skills">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#leadership">Leadership</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#volunteer">Volunteer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#robotics">Robotics</a>
+          <a class="nav-link" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#travel">Travel</a>
+          <a class="nav-link" href="#robotics">Robotics</a>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-cta" href="#portfolio"><i class="fas fa-briefcase me-2"></i>Portfolio</a>
@@ -119,7 +115,7 @@
         <p>A custom Java motion-control library and robot codebase for FIRST Tech Challenge that replaced the open-source libraries our team had relied on. It ran our robot through the 2026 season, when we won the NYC Championship and the FTC Control Award and qualified for the World Championship in Houston.</p>
         <ul>
           <li>Built our own localization, motion profiling, holonomic pure pursuit, PID pose control and mecanum inverse kinematics, plus tuning OpModes for each controller.</li>
-          <li>Fused goBILDA Pinpoint odometry with Limelight 3A AprilTag poses through parallel 1D Kalman filters.</li>
+          <li>Fused goBILDA Pinpoint odometry with Limelight 3A AprilTag poses through parallel 1D Kalman filters, and isolated a Limelight firmware defect that returned NaN rotations for near-head-on poses.</li>
           <li>Built <strong>AutoAim</strong>: a turret angle solver plus a quadratic distance-to-RPM regression for the shooter, so aligning a shot became a single action.</li>
           <li>Cut autonomous overshoot by regressing braking distance against velocity and decelerating early.</li>
         </ul>
@@ -174,34 +170,6 @@
         <div class="block">
           <h4>Links</h4>
           <a href="https://github.com/RohanSen08/ProfiledPathGenerator" target="_blank" rel="noopener"><i class="fab fa-github"></i> ProfiledPathGenerator</a>
-        </div>
-      </aside>
-    </article>
-
-    <!-- Chest X-ray -->
-    <article class="feature wide">
-      <div>
-        <h3>Chest X-ray Pathology Ensemble</h3>
-        <div class="role">Research Intern · Feinstein Institutes for Medical Research · 2025–present</div>
-        <p>A multi-model deep learning ensemble for 14-label thoracic pathology classification on the 112K-image NIH ChestX-ray14 dataset, built in the Division of Health AI at Northwell Health.</p>
-        <ul>
-          <li>Trained nine PyTorch base models on Databricks, including CoAtNet and DenseNet-121 baselines.</li>
-          <li>Designed a hybrid CNN–Vision Transformer with residual squeeze-and-excitation stem blocks, mixed-precision training and a warmup + cosine learning-rate schedule.</li>
-          <li>Built a dual-scale U-Net with Performer attention and EfficientNet fusion. I diagnosed a branch-dominance failure that was suppressing the decoder's contribution to AUROC and proposed an auxiliary-loss fix.</li>
-          <li>Stacked the base models with scikit-learn and XGBoost meta-learners trained on exported embeddings.</li>
-        </ul>
-      </div>
-      <aside class="side">
-        <div class="block">
-          <h4>Stack</h4>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Databricks</span>
-            <span class="tag">Vision Transformers</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span>
-          </div>
-        </div>
-        <div class="block">
-          <h4>Links</h4>
-          <span class="note">Ongoing research, so the code isn't public.</span>
         </div>
       </aside>
     </article>
@@ -345,18 +313,6 @@
           classification, a custom Java motion-control library for FTC robotics, and web platforms used
           by hundreds of students.
         </p>
-        <ul>
-          <li>CMU Coursework: Principles of Imperative Computation (15-122), Concepts of Mathematics (21-127), Reasoning with Data (36-200)</li>
-          <li>Stuyvesant GPA: 4.0</li>
-          <li>SAT: 1570 total — 800 Math, 770 Reading &amp; Writing</li>
-          <li>AP Coursework: Biology, World History, Environmental Science, US History, Computer Science, Pre-Calculus, Calculus BC, Macroeconomics, Microeconomics</li>
-          <li>Honors Classes: Honors Chemistry, Honors Physics</li>
-          <li>Advanced Electives: Software Development, Systems Engineering, Oceanography</li>
-          <li>Columbia University Science Honors Program, 11th and 12th grade</li>
-        </ul>
-        <p>
-          Programming experience: Python, Java, C++, JavaScript, SQL, Swift, Bash, PyTorch, TensorFlow, NumPy, pandas, Databricks, React, Svelte, Flask, and Node.js.
-        </p>
       </div>
       <div class="col-lg-6">
         <div class="row">
@@ -476,8 +432,8 @@
   </div>
 </section>
 
-<!-- Projects/Achievements Section -->
-<section class="section bg-light" id="projects">
+<!-- Leadership, Activities & Awards Section -->
+<section class="section bg-light" id="leadership">
   <div class="container">
     <h2 class="section-title">Leadership, Activities & Awards</h2>
     <div class="row">
@@ -486,7 +442,6 @@
           <div class="card-body">
             <h4 class="card-title">Mighty Mechanics FTC Team</h4>
             <p class="card-text">Captain &amp; Lead Programmer for FTC Team #8721 Mighty Mechanics (2023 - 2026).</p>
-            <p class="card-text">Led development of Mighty Motion, a custom Java motion-control library with localization, motion profiling, holonomic pure pursuit, PID pose control, and inverse kinematics. Built a Kalman-filtered odometry + AprilTag localizer and AutoAim, a turret angle solver and distance-to-RPM regression that reduced manual alignment to one action.</p>
             <p class="card-text mb-0">NYC Champion and FTC Control Award winner (2026); World Championship qualifier (2024, 2026).</p>
           </div>
         </div>
@@ -496,7 +451,7 @@
           <div class="card-body">
             <h4 class="card-title">Stuyvesant ARISTA</h4>
             <p class="card-text">Vice President of Web, elected (2025 - 2026); Web Committee Member (2024).</p>
-            <p class="card-text mb-0">Led a 15-person web team maintaining stuyarista.org and its backend for 200+ members and 1,000+ tutees. Wrote credit rollover verification scripts that automate membership requirement tracking, and rebuilt the interactive club fair map.</p>
+            <p class="card-text mb-0">Led a 15-person web team maintaining stuyarista.org and its backend for 200+ members and 1,000+ tutees.</p>
           </div>
         </div>
       </div>
@@ -514,7 +469,7 @@
           <div class="card-body">
             <h4 class="card-title">Gocogni.io</h4>
             <p class="card-text">Co-Founder & CTO (September 2024 - October 2025).</p>
-            <p class="card-text mb-0">Built AI-powered adaptive learning tools; key infrastructure developed with React.</p>
+            <p class="card-text">Demo of the Cogni study platform.</p>
             <div class="ratio ratio-16x9 rounded overflow-hidden">
               <video controls preload="metadata" poster="static/sequence-01-2-poster.jpg">
                 <source src="static/sequence-01-2.mp4" type="video/mp4">
@@ -525,37 +480,36 @@
         </div>
       </div>
       <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Academic & National Recognition</h4>
-          <ul class="mb-0">
-            <li>National Merit Commended Student — 2025</li>
-            <li>AP Scholar with Distinction — 2025</li>
-            <li>College Board National Recognition Program: Outstanding Academic Achievement — 2025</li>
-            <li>Nominated for the U.S. Presidential Scholars Program — 2025</li>
-            <li>National Honor Society / ARISTA — admitted as a sophomore</li>
-            <li>Stuyvesant Science National Honor Society — elected 2025</li>
-          </ul>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Academic & National Recognition</h4>
+            <ul class="mb-0">
+              <li>National Merit Commended Student — 2025</li>
+              <li>AP Scholar with Distinction — 2025</li>
+              <li>College Board National Recognition Program: Outstanding Academic Achievement — 2025</li>
+              <li>Nominated for the U.S. Presidential Scholars Program — 2025</li>
+              <li>National Honor Society / ARISTA — admitted as a sophomore</li>
+              <li>Stuyvesant Science National Honor Society — elected 2025</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Robotics & Competitive Programming</h4>
-          <ul class="mb-0">
-            <li>FTC NYC Champion — 2026</li>
-            <li>FTC Control Award — 2026</li>
-            <li>FIRST Tech Challenge World Championship Qualifier — Houston, 2024 and 2026</li>
-            <li>FTC NYC Finalist — 2025</li>
-            <li>FIRST Dean’s List Semi-Finalist, NYC — 2025</li>
-            <li>PClassic, University of Pennsylvania — 2024, 2025</li>
-            <li>Cornell University High School Programming Contest — 2023, 2024, 2025</li>
-          </ul>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Robotics & Competitive Programming</h4>
+            <ul class="mb-0">
+              <li>FTC NYC Champion — 2026</li>
+              <li>FTC Control Award — 2026</li>
+              <li>FIRST Tech Challenge World Championship Qualifier — Houston, 2024 and 2026</li>
+              <li>FTC NYC Finalist — 2025</li>
+              <li>FIRST Dean’s List Semi-Finalist, NYC — 2025</li>
+              <li>PClassic, University of Pennsylvania — 2024, 2025</li>
+              <li>Cornell University High School Programming Contest — 2023, 2024, 2025</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </section>
@@ -667,21 +621,19 @@
         <p class="timeline-date">Summer 2024</p>
         <h4>Columbia University SHAPE</h4>
         <p>Competitive Programming & Machine Learning</p>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="text-center">
-            <div class="">
-              <img src="static/IMG_7863.jpg" class="img-fluid rounded gallery-img" alt="pres">
-              <p class="caption">Presenting my final project for SHAPE</p>
-            </div>
+        <div class="row">
+          <div class="col-md-4 col-6">
+            <img src="static/IMG_7863.jpg" class="img-fluid rounded gallery-img" alt="Presenting my final project for SHAPE">
+            <p class="caption">Presenting my final project for SHAPE</p>
           </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Robotics Section -->
-<section class="section bg-light" id="robotics">
+<section class="section" id="robotics">
   <div class="container">
     <h2 class="section-title">Robotics</h2>
     <div class="row mb-4">
@@ -695,12 +647,7 @@
       </div>
       <div class="col-lg-6">
         <h3>My Skillset</h3>
-        <p>As lead programmer, I led development of <strong>Mighty Motion</strong>, a custom Java motion-control library that replaced open-source alternatives, with our own localization, motion profiling, holonomic pure pursuit, PID pose control, and inverse kinematics.</p>
-        <ul>
-          <li>Fused GoBILDA Pinpoint odometry with Limelight 3A AprilTag poses through parallel 1D Kalman filters into a reusable localizer, and isolated a Limelight firmware defect returning NaN rotations in near-head-on pose solutions.</li>
-          <li>Cut autonomous waypoint overshoot by regressing braking distance against velocity and decelerating pre-emptively.</li>
-          <li>Built AutoAim, deriving a quadratic distance-to-RPM regression and a turret angle solver that reduced manual alignment to one action.</li>
-        </ul>
+        <p>As lead programmer, I led development of <strong>Mighty Motion</strong>, our custom Java motion-control library, along with the localization and AutoAim systems built on it. The <a href="#mighty-motion">portfolio</a> covers how it works.</p>
 
         <div class="row mt-4">
           <div class="col-md-6 text-center">
