@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Rohan Sen</title>
+    <meta name="description" content="Selected software projects by Rohan Sen: robotics motion control, medical AI, full-stack web apps, and systems programming.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2b55c7;
+            --primary-dark: #1a3baa;
+            --primary-soft: #eef2fc;
+            --text: #1d2330;
+            --muted: #5b6475;
+            --border: #e3e7ef;
+            --bg: #f7f8fb;
+            --card: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top bar */
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .topbar .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .brand { font-weight: 700; color: var(--text); font-size: 1.1rem; }
+        .topbar nav a { margin-left: 22px; color: var(--muted); font-weight: 500; font-size: 0.95rem; }
+        .topbar nav a:hover { color: var(--primary); text-decoration: none; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            padding: 64px 0 56px;
+        }
+        .hero h1 { font-size: 2.6rem; margin: 0 0 12px; line-height: 1.2; }
+        .hero p { max-width: 680px; margin: 0; font-size: 1.1rem; opacity: 0.92; }
+        .hero .links { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 9px 16px; border-radius: 8px; font-weight: 600; font-size: 0.92rem;
+            background: #fff; color: var(--primary);
+        }
+        .btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); }
+        .btn:hover { text-decoration: none; opacity: 0.9; }
+
+        /* Sections */
+        section { padding: 56px 0 8px; }
+        h2 { font-size: 1.6rem; margin: 0 0 6px; }
+        .section-sub { color: var(--muted); margin: 0 0 28px; }
+
+        /* Featured projects: two per row; .wide cards span the row with a sidebar */
+        .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .feature {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+        }
+        .features > .feature.wide {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 28px;
+        }
+        .feature h3 { margin: 0 0 4px; font-size: 1.3rem; }
+        .role { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; }
+        .feature p { margin: 0 0 12px; color: #343b4a; }
+        .feature ul { margin: 0 0 4px; padding-left: 20px; color: #343b4a; }
+        .feature li { margin-bottom: 6px; }
+        .side {
+            margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); font-size: 0.9rem;
+            display: flex; flex-wrap: wrap; gap: 0 28px;
+        }
+        .feature > div { margin-bottom: 18px; }
+        .features > .feature.wide > div { margin-bottom: 0; }
+        .features > .feature.wide .side {
+            margin-top: 0; padding: 0 0 0 24px; border-top: none; border-left: 1px solid var(--border); display: block;
+        }
+        .side h4 {
+            margin: 0 0 8px; font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 0.06em; color: var(--muted);
+        }
+        .side .block { margin-bottom: 4px; flex: 1 1 200px; }
+        .side .block + .block { flex: 0 1 auto; }
+        .side a { display: block; margin-bottom: 4px; font-weight: 500; }
+        .side .note { color: var(--muted); }
+        .feature-media {
+            margin: -26px -26px 20px; height: 210px; overflow: hidden; position: relative;
+            border-bottom: 1px solid var(--border); border-radius: 12px 12px 0 0;
+        }
+        .field {
+            background: var(--bg); text-align: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .field svg { width: 160px; height: 160px; display: block; margin: 0 auto; }
+        .diagram {
+            background: #fff; padding: 14px 16px 8px;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .diagram a { display: block; flex: 1; min-height: 0; }
+        .diagram img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .feature-media > figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 8px; text-align: center; }
+        .field-bg { fill: var(--primary-soft); stroke: var(--border); stroke-width: 0.8; }
+        .field-grid line { stroke: #ffffff; stroke-width: 0.8; }
+        .spline { fill: none; stroke: var(--primary); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+        .wp { fill: var(--text); stroke: #fff; stroke-width: 1.2; }
+        .wp.start { fill: var(--primary-dark); }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag {
+            background: var(--primary-soft); color: var(--primary-dark);
+            font-size: 0.78rem; font-weight: 600; padding: 3px 9px; border-radius: 999px;
+        }
+
+        /* Smaller project grid */
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .card {
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 22px; display: flex; flex-direction: column;
+        }
+        .card h3 { margin: 0 0 2px; font-size: 1.05rem; }
+        .card-media {
+            margin: -22px -22px 18px; height: 210px; background: #000;
+            border-radius: 12px 12px 0 0; overflow: hidden;
+        }
+        .card-media img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .card-media.video { display: block; position: relative; }
+        .card-media.shot { display: block; background: var(--bg); }
+        .card-media.shot img { object-fit: cover; object-position: left center; }
+        .card-media.video img { object-fit: cover; }
+        .card-media .play {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 56px; height: 56px; border-radius: 50%; background: rgba(0,0,0,0.65);
+            color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+        }
+        .card-media.video:hover .play { background: var(--primary); }
+        .card .kind { color: var(--muted); font-size: 0.82rem; margin-bottom: 10px; }
+        .card p { margin: 0 0 14px; font-size: 0.93rem; color: #343b4a; flex: 1; }
+        .card .tags { margin-bottom: 12px; }
+        .card .foot { font-size: 0.88rem; font-weight: 500; }
+        .card .foot .note { color: var(--muted); font-weight: 400; }
+
+        /* Tech stack */
+        .stack { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .stack-item {
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px;
+        }
+        .stack-item h3 { margin: 0 0 4px; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
+        .stack-item h3 i { color: var(--primary); width: 18px; text-align: center; }
+        .stack-item p { margin: 0 0 10px; font-size: 0.88rem; color: var(--muted); }
+
+        footer { padding: 48px 0 40px; color: var(--muted); font-size: 0.88rem; text-align: center; }
+
+        @media (max-width: 860px) {
+            .features { grid-template-columns: 1fr; }
+            .features > .feature.wide { display: flex; grid-column: auto; }
+            .features > .feature.wide > div { margin-bottom: 18px; }
+            .features > .feature.wide .side {
+                margin-top: auto; padding: 18px 0 0; border-left: none; border-top: 1px solid var(--border); display: flex;
+            }
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .grid, .stack { grid-template-columns: 1fr; }
+            .feature { padding: 22px; }
+            .feature-media { margin: -22px -22px 18px; height: 180px; }
+            .field svg { width: 130px; height: 130px; }
+            .topbar nav a { margin-left: 14px; }
+            .topbar nav a.hide-sm { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="topbar">
+    <div class="wrap">
+        <a class="brand" href="index.html">Rohan Sen</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a class="hide-sm" href="#featured">Projects</a>
+            <a class="hide-sm" href="#stack">Tech Stack</a>
+            <a href="https://github.com/RohanSen08" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="wrap">
+        <h1>Portfolio</h1>
+        <p>A selection of the projects I'm proudest of, across robotics, medical AI, full-stack web development and systems programming. Each one lists what I built and the stack behind it.</p>
+        <div class="links">
+            <a class="btn" href="https://github.com/RohanSen08" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            <a class="btn ghost" href="index.html"><i class="fas fa-user"></i> About me</a>
+        </div>
+    </div>
+</div>
+
+<main class="wrap">
+
+    <!-- FEATURED -->
+    <section id="featured">
+        <h2>Featured Projects</h2>
+        <p class="section-sub">Larger, long-running projects where I owned major parts of the design and code.</p>
+
+        <div class="features">
+        <!-- Mighty Motion -->
+        <article class="feature">
+            <figure class="feature-media diagram">
+                <a href="static/mighty-motion-architecture.png" target="_blank" rel="noopener" title="Open full size">
+                    <img src="static/mighty-motion-architecture.png" alt="Mighty Motion control pipeline: odometry feeds the localizer; the robot pose and a motion-profiled path feed pure pursuit, which outputs a target pose; x, y and heading PID controllers turn it into robot velocities; inverse kinematics converts those to wheel speeds for per-wheel feedforward motor controllers" width="1378" height="448" loading="lazy">
+                </a>
+                <figcaption>Mighty Motion's control pipeline · click to enlarge</figcaption>
+            </figure>
+            <div>
+                <h3>Mighty Motion</h3>
+                <div class="role">Lead Programmer · FTC Team #8721 Mighty Mechanics · 2023–2026</div>
+                <p>A custom Java motion-control library and robot codebase for FIRST Tech Challenge that replaced the open-source libraries our team had relied on. It ran our robot through the 2026 season, when we won the NYC Championship and the FTC Control Award and qualified for the World Championship in Houston.</p>
+                <ul>
+                    <li>Built our own localization, motion profiling, holonomic pure pursuit, PID pose control and mecanum inverse kinematics, plus tuning OpModes for each controller.</li>
+                    <li>Fused goBILDA Pinpoint odometry with Limelight 3A AprilTag poses through parallel 1D Kalman filters.</li>
+                    <li>Built <strong>AutoAim</strong>: a turret angle solver plus a quadratic distance-to-RPM regression for the shooter, so aligning a shot became a single action.</li>
+                    <li>Cut autonomous overshoot by regressing braking distance against velocity and decelerating early.</li>
+                </ul>
+            </div>
+            <aside class="side">
+                <div class="block">
+                    <h4>Stack</h4>
+                    <div class="tags">
+                        <span class="tag">Java</span><span class="tag">Android SDK</span><span class="tag">Gradle</span>
+                        <span class="tag">Kalman filtering</span><span class="tag">Limelight 3A</span><span class="tag">Control theory</span>
+                    </div>
+                </div>
+            </aside>
+        </article>
+
+        <!-- ProfiledPathGenerator -->
+        <article class="feature">
+            <figure class="feature-media field">
+                <svg viewBox="-2 -2 148 148" role="img" aria-label="Spline path generated through seven waypoints on a 144-inch FTC field">
+                    <rect x="0" y="0" width="144" height="144" rx="3" class="field-bg"/>
+                    <g class="field-grid"><line x1="24" y1="0" x2="24" y2="144"/><line x1="0" y1="24" x2="144" y2="24"/><line x1="48" y1="0" x2="48" y2="144"/><line x1="0" y1="48" x2="144" y2="48"/><line x1="72" y1="0" x2="72" y2="144"/><line x1="0" y1="72" x2="144" y2="72"/><line x1="96" y1="0" x2="96" y2="144"/><line x1="0" y1="96" x2="144" y2="96"/><line x1="120" y1="0" x2="120" y2="144"/><line x1="0" y1="120" x2="144" y2="120"/></g>
+                    <path d="M72.0 72.0 L71.92 71.93 L71.67 71.73 L71.26 71.4 L70.71 70.95 L70.01 70.38 L69.18 69.7 L68.21 68.91 L67.13 68.02 L65.93 67.03 L64.62 65.95 L63.21 64.77 L61.71 63.52 L60.11 62.19 L58.44 60.78 L56.69 59.3 L54.88 57.77 L53.01 56.17 L51.08 54.52 L49.11 52.82 L47.1 51.08 L45.06 49.29 L42.99 47.48 L40.9 45.64 L38.81 43.77 L36.7 41.88 L34.6 39.98 L32.51 38.07 L30.44 36.16 L28.39 34.24 L26.37 32.33 L24.39 30.44 L22.45 28.56 L20.56 26.7 L18.73 24.86 L16.97 23.06 L15.27 21.29 L13.66 19.56 L12.13 17.87 L10.7 16.24 L9.36 14.66 L8.13 13.14 L7.01 11.69 L6.02 10.31 L5.15 9.0 L4.42 7.77 L3.82 6.63 L3.38 5.57 L3.09 4.61 L2.96 3.75 L3.0 3.0 L3.21 2.35 L3.6 1.81 L4.15 1.37 L4.86 1.03 L5.72 0.79 L6.73 0.64 L7.88 0.57 L9.17 0.59 L10.59 0.69 L12.14 0.87 L13.81 1.12 L15.59 1.44 L17.49 1.83 L19.48 2.28 L21.58 2.79 L23.77 3.35 L26.04 3.97 L28.4 4.63 L30.83 5.34 L33.34 6.1 L35.91 6.88 L38.54 7.71 L41.22 8.56 L43.95 9.44 L46.73 10.35 L49.54 11.27 L52.39 12.21 L55.26 13.16 L58.16 14.12 L61.06 15.09 L63.98 16.06 L66.91 17.02 L69.83 17.98 L72.74 18.94 L75.65 19.87 L78.53 20.8 L81.4 21.7 L84.23 22.58 L87.03 23.43 L89.79 24.25 L92.51 25.04 L95.17 25.79 L97.78 26.5 L100.33 27.16 L102.81 27.78 L105.21 28.34 L107.54 28.85 L109.79 29.3 L111.94 29.68 L114.0 30.0 L115.96 30.25 L117.82 30.43 L119.59 30.55 L121.26 30.6 L122.83 30.59 L124.32 30.53 L125.71 30.41 L127.02 30.23 L128.24 30.01 L129.38 29.73 L130.43 29.41 L131.4 29.05 L132.3 28.65 L133.11 28.21 L133.85 27.73 L134.52 27.22 L135.12 26.67 L135.64 26.1 L136.1 25.5 L136.49 24.88 L136.81 24.23 L137.07 23.57 L137.27 22.89 L137.42 22.19 L137.5 21.48 L137.53 20.77 L137.5 20.04 L137.42 19.32 L137.29 18.58 L137.11 17.85 L136.88 17.13 L136.61 16.4 L136.3 15.69 L135.94 14.98 L135.54 14.29 L135.11 13.61 L134.64 12.95 L134.13 12.3 L133.59 11.68 L133.02 11.09 L132.42 10.52 L131.79 9.98 L131.14 9.47 L130.46 8.99 L129.77 8.56 L129.05 8.16 L128.31 7.8 L127.55 7.49 L126.78 7.22 L126.0 7.0 L125.21 6.83 L124.4 6.71 L123.58 6.65 L122.75 6.63 L121.91 6.66 L121.06 6.73 L120.19 6.86 L119.32 7.03 L118.43 7.25 L117.53 7.51 L116.62 7.82 L115.7 8.17 L114.76 8.56 L113.82 9.0 L112.86 9.48 L111.89 10.0 L110.91 10.56 L109.92 11.17 L108.92 11.81 L107.9 12.49 L106.88 13.21 L105.84 13.97 L104.79 14.77 L103.73 15.6 L102.65 16.47 L101.57 17.37 L100.47 18.31 L99.36 19.28 L98.24 20.28 L97.11 21.32 L95.97 22.39 L94.81 23.49 L93.64 24.63 L92.46 25.79 L91.27 26.98 L90.07 28.2 L88.86 29.45 L87.63 30.73 L86.39 32.04 L85.14 33.37 L83.88 34.72 L82.61 36.11 L81.32 37.51 L80.03 38.94 L78.72 40.4 L77.4 41.88 L76.07 43.38 L74.72 44.9 L73.37 46.44 L72.0 48.0 L70.62 49.58 L69.23 51.18 L67.84 52.79 L66.44 54.42 L65.03 56.06 L63.63 57.71 L62.23 59.36 L60.83 61.02 L59.44 62.69 L58.05 64.35 L56.68 66.01 L55.32 67.67 L53.98 69.33 L52.65 70.98 L51.35 72.62 L50.06 74.24 L48.8 75.86 L47.57 77.45 L46.37 79.03 L45.2 80.59 L44.06 82.13 L42.96 83.65 L41.9 85.14 L40.87 86.6 L39.89 88.03 L38.96 89.43 L38.07 90.79 L37.24 92.12 L36.45 93.41 L35.72 94.66 L35.04 95.87 L34.43 97.03 L33.87 98.15 L33.38 99.22 L32.96 100.23 L32.6 101.2 L32.31 102.11 L32.1 102.96 L31.96 103.75 L31.89 104.49 L31.91 105.15 L32.01 105.76 L32.19 106.3 L32.46 106.76 L32.81 107.16 L33.26 107.48 L33.8 107.73 L34.43 107.9 L35.17 107.99 L36.0 108.0 L36.93 107.93 L37.96 107.77 L39.09 107.54 L40.3 107.23 L41.59 106.86 L42.97 106.42 L44.41 105.91 L45.93 105.34 L47.5 104.72 L49.14 104.05 L50.83 103.32 L52.57 102.55 L54.36 101.73 L56.18 100.87 L58.04 99.98 L59.94 99.06 L61.85 98.1 L63.79 97.12 L65.74 96.12 L67.7 95.09 L69.67 94.05 L71.65 93.0 L73.61 91.93 L75.57 90.87 L77.52 89.79 L79.45 88.72 L81.36 87.66 L83.24 86.6 L85.09 85.55 L86.9 84.51 L88.67 83.5 L90.39 82.5 L92.06 81.53 L93.68 80.59 L95.23 79.67 L96.72 78.79 L98.14 77.95 L99.48 77.15 L100.75 76.4 L101.93 75.69 L103.01 75.04 L104.01 74.43 L104.91 73.89 L105.7 73.41 L106.38 72.99 L106.95 72.64 L107.4 72.37 L107.73 72.17 L107.93 72.04 L108.0 72.0" class="spline"/>
+                    <circle cx="72" cy="72" r="5" class="wp start"/>
+                    <circle cx="3" cy="3" r="4" class="wp"/>
+                    <circle cx="114" cy="30" r="4" class="wp"/>
+                    <circle cx="126" cy="7" r="4" class="wp"/>
+                    <circle cx="72" cy="48" r="4" class="wp"/>
+                    <circle cx="36" cy="108" r="4" class="wp"/>
+                    <circle cx="108" cy="72" r="4" class="wp"/>
+                </svg>
+                <figcaption>Generated from the repo's sample waypoints</figcaption>
+            </figure>
+            <div>
+                <h3>ProfiledPathGenerator</h3>
+                <div class="role">Solo project · FTC autonomous path planning · 2025</div>
+                <p>Turns a handful of field waypoints into a smooth path the robot can drive in autonomous. Instead of hand-tuning arcs, it fits a piecewise parametric cubic spline through every waypoint by solving a single linear system, then samples it into dense points that a path-following controller can track.</p>
+                <ul>
+                    <li>Builds the 8n × 8n constraint system directly: waypoint continuity (assembled with a Kronecker product), C¹ and C² continuity at every interior knot, and zero velocity at the start and end.</li>
+                    <li>Solves for every spline coefficient at once with EJML, then discretizes each segment into 50 points.</li>
+                    <li>Plots the result on the 144-inch field with JFreeChart, so a route can be checked before it runs on the robot.</li>
+                    <li>Later ported into Mighty Motion, where I connected it to a geometric path-following controller and live dashboard graphing.</li>
+                </ul>
+            </div>
+            <aside class="side">
+                <div class="block">
+                    <h4>Stack</h4>
+                    <div class="tags">
+                        <span class="tag">Java</span><span class="tag">EJML</span><span class="tag">JFreeChart</span>
+                        <span class="tag">Linear algebra</span><span class="tag">Cubic splines</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <h4>Links</h4>
+                    <a href="https://github.com/RohanSen08/ProfiledPathGenerator" target="_blank" rel="noopener"><i class="fab fa-github"></i> ProfiledPathGenerator</a>
+                </div>
+            </aside>
+        </article>
+
+        <!-- Chest X-ray -->
+        <article class="feature wide">
+            <div>
+                <h3>Chest X-ray Pathology Ensemble</h3>
+                <div class="role">Research Intern · Feinstein Institutes for Medical Research · 2025–present</div>
+                <p>A multi-model deep learning ensemble for 14-label thoracic pathology classification on the 112K-image NIH ChestX-ray14 dataset, built in the Division of Health AI at Northwell Health.</p>
+                <ul>
+                    <li>Trained nine PyTorch base models on Databricks, including CoAtNet and DenseNet-121 baselines.</li>
+                    <li>Designed a hybrid CNN–Vision Transformer with residual squeeze-and-excitation stem blocks, mixed-precision training and a warmup + cosine learning-rate schedule.</li>
+                    <li>Built a dual-scale U-Net with Performer attention and EfficientNet fusion. I diagnosed a branch-dominance failure that was suppressing the decoder's contribution to AUROC and proposed an auxiliary-loss fix.</li>
+                    <li>Stacked the base models with scikit-learn and XGBoost meta-learners trained on exported embeddings.</li>
+                </ul>
+            </div>
+            <aside class="side">
+                <div class="block">
+                    <h4>Stack</h4>
+                    <div class="tags">
+                        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Databricks</span>
+                        <span class="tag">Vision Transformers</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <h4>Links</h4>
+                    <span class="note">Ongoing research, so the code isn't public.</span>
+                </div>
+            </aside>
+        </article>
+
+        <!-- ARISTA -->
+        <article class="feature">
+            <div>
+                <h3>stuyarista.org</h3>
+                <div class="role">Vice President of Web · Stuyvesant ARISTA · 2024–2026</div>
+                <p>The website and backend for Stuyvesant's National Honor Society chapter, used by 200+ members to log volunteer credit and by 1,000+ students to request peer tutoring. I led the 15-person web team and wrote about 90 commits to the rewrite.</p>
+                <ul>
+                    <li>Built cancelable tutoring requests, admin deletion of unclaimed requests, and fixes for request spamming on the tutoring page.</li>
+                    <li>Wrote the credit-rollover verification script and worked on the credit-calculation logic used to track membership requirements.</li>
+                    <li>Rebuilt the interactive club fair map, and added dropdown navigation and loading screens.</li>
+                </ul>
+            </div>
+            <aside class="side">
+                <div class="block">
+                    <h4>Stack</h4>
+                    <div class="tags">
+                        <span class="tag">SvelteKit</span><span class="tag">TypeScript</span><span class="tag">PocketBase</span>
+                        <span class="tag">Tailwind CSS</span><span class="tag">Skeleton UI</span><span class="tag">Python</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <h4>Links</h4>
+                    <a href="https://stuyarista.org" target="_blank" rel="noopener"><i class="fas fa-globe"></i> stuyarista.org</a>
+                    <a href="https://github.com/RohanSen08/arista-rewrite" target="_blank" rel="noopener"><i class="fab fa-github"></i> arista-rewrite</a>
+                </div>
+            </aside>
+        </article>
+
+        <!-- Cogni -->
+        <article class="feature">
+            <div>
+                <h3>Cogni</h3>
+                <div class="role">Co-Founder &amp; CTO · 2024–2025</div>
+                <p>An AI study platform that turns any text into flashcards and adaptive practice tests. It started as our 2024 Congressional App Challenge (NY-12) submission and grew into a production app at gocogni.io.</p>
+                <ul>
+                    <li>Prototype: a vanilla HTML/CSS/JS app calling the OpenAI API for flashcard and interactive test generation.</li>
+                    <li>Production: a React 19 + Vite frontend and a Hono.js API, both deployed on Cloudflare Workers, with Supabase for Postgres and Google OAuth, and GPT-4o for generation.</li>
+                </ul>
+            </div>
+            <aside class="side">
+                <div class="block">
+                    <h4>Stack</h4>
+                    <div class="tags">
+                        <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Hono.js</span>
+                        <span class="tag">Cloudflare Workers</span><span class="tag">Supabase</span><span class="tag">OpenAI API</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <h4>Links</h4>
+                    <a href="https://gocogni.io" target="_blank" rel="noopener"><i class="fas fa-globe"></i> gocogni.io</a>
+                    <a href="https://github.com/RohanSen08/CogniAppChallenge" target="_blank" rel="noopener"><i class="fab fa-github"></i> CogniAppChallenge</a>
+                </div>
+            </aside>
+        </article>
+        </div>
+    </section>
+
+    <!-- MORE PROJECTS -->
+    <section id="more">
+        <h2>More Projects</h2>
+        <p class="section-sub">Team and solo builds from software development, systems and graphics coursework, plus side projects.</p>
+
+        <div class="grid">
+            <div class="card">
+                <a class="card-media shot" href="static/nerdymap.webp" target="_blank" rel="noopener" title="Open full size">
+                    <img src="static/nerdymap-card.jpg" alt="NerdyMap showing live subway, LIRR and Metro-North trains across New York City and Long Island, with a panel of nine active service alerts" width="900" height="613" loading="lazy">
+                </a>
+                <h3>NerdyMap</h3>
+                <div class="kind">NYC transit guide · Project Manager · team of 4</div>
+                <p>A transit guide for NYC commuters that goes past Google and Apple Maps, showing live train positions, delays, service alerts and elevator/escalator status across the subway, LIRR, Metro-North and NJ Transit.</p>
+                <div class="tags"><span class="tag">Flask</span><span class="tag">GTFS-Realtime</span><span class="tag">SQLAlchemy</span><span class="tag">pandas</span><span class="tag">JavaScript</span></div>
+                <div class="foot">
+                    <a href="https://github.com/dlee08/SARDines-szhang60stuy-araf215-rohansen08-dlee08" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="card-media video" href="https://www.youtube.com/watch?v=tSkC4vpZ9Wk" target="_blank" rel="noopener" aria-label="Watch the c_chat demo on YouTube">
+                    <img src="https://i.ytimg.com/vi/tSkC4vpZ9Wk/hqdefault.jpg" alt="c_chat demo video thumbnail" width="480" height="360" loading="lazy">
+                    <span class="play"><i class="fas fa-play"></i></span>
+                </a>
+                <h3>c_chat</h3>
+                <div class="kind">Systems programming · team of 2</div>
+                <p>A multi-user chat app in C with a TCP server built around <code>select()</code>, switchable group chats, and history saved to disk so users pick up where they left off. I built the GTK4 desktop client.</p>
+                <div class="tags"><span class="tag">C</span><span class="tag">Sockets</span><span class="tag">GTK4</span><span class="tag">Linux</span></div>
+                <div class="foot"><a href="https://www.youtube.com/watch?v=tSkC4vpZ9Wk" target="_blank" rel="noopener">Demo video</a> · <a href="https://github.com/RohanSen08/c_chat" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-media">
+                    <img src="static/solar-system-render.gif" alt="Animated render from the engine: a Phong-shaded sun, an orbiting earth eased with accel, and a moon animated with tween" width="500" height="500" loading="lazy">
+                </div>
+                <h3>3D Graphics Engine</h3>
+                <div class="kind">Computer graphics · solo</div>
+                <p>A 3D software renderer in Java, built up stage by stage over a semester: line drawing, transformation matrices, Bézier/Hermite curves, polygon meshes, a coordinate-system stack, scanline-filled solids and lighting. It runs scripts in the MDL animation language, which I extended with Phong shading, tweening and an <code>accel</code> command for eased motion.</p>
+                <div class="tags"><span class="tag">Java</span><span class="tag">Linear algebra</span><span class="tag">Parsers</span></div>
+                <div class="foot"><span class="note">Rendered by the engine from <code>solar_system.mdl</code> · school repo (private)</span></div>
+            </div>
+
+            <div class="card">
+                <h3>IKEAlyzer</h3>
+                <div class="kind">Data visualization · team of 4</div>
+                <p>Compares IKEA products across countries by price, currency, rating and review count. It scrapes and cleans about 4,000 product groups into SQLite and renders interactive charts per item.</p>
+                <div class="tags"><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">D3.js</span><span class="tag">Bootstrap</span></div>
+                <div class="foot"><a href="https://github.com/dlee08/DRBC-dlee08-rohansen08-bogdansotnikov-baiwanqian" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+
+            <div class="card">
+                <h3>GoTravelAI</h3>
+                <div class="kind">iOS app · solo</div>
+                <p>A native iOS trip planner. It turns a destination and preferences into a day-by-day itinerary with Gemini 2.0 Flash, then adds photos of each stop from the Google Places API.</p>
+                <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Gemini API</span><span class="tag">Google Places</span></div>
+                <div class="foot"><a href="https://github.com/RohanSen08/GoTravelAI" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+
+            <div class="card">
+                <h3>Asteroids3D</h3>
+                <div class="kind">Game · team of 2</div>
+                <p>A 3D take on Asteroids with OBJ model loading, textured meshes, 3D collision detection, sound effects and scoring.</p>
+                <div class="tags"><span class="tag">Processing</span><span class="tag">Java</span><span class="tag">3D</span></div>
+                <div class="foot"><a href="https://github.com/RohanSen08/asteroids3D" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="stack">
+        <h2>Tech Stack</h2>
+        <p class="section-sub">What I've used in the projects above, grouped by area.</p>
+
+        <div class="stack">
+            <div class="stack-item">
+                <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                <p>Chest X-ray ensemble research</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Databricks</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">NumPy</span><span class="tag">pandas</span></div>
+            </div>
+            <div class="stack-item">
+                <h3><i class="fas fa-robot"></i> Robotics</h3>
+                <p>Mighty Motion, ProfiledPathGenerator</p>
+                <div class="tags"><span class="tag">Java</span><span class="tag">FTC SDK</span><span class="tag">Kalman filters</span><span class="tag">Pure pursuit</span><span class="tag">PID</span><span class="tag">Splines</span></div>
+            </div>
+            <div class="stack-item">
+                <h3><i class="fas fa-layer-group"></i> Web Frontend</h3>
+                <p>stuyarista.org, Cogni, NerdyMap, IKEAlyzer</p>
+                <div class="tags"><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SvelteKit</span><span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">D3.js</span><span class="tag">Bootstrap</span></div>
+            </div>
+            <div class="stack-item">
+                <h3><i class="fas fa-server"></i> Backend &amp; Data</h3>
+                <p>stuyarista.org, Cogni, NerdyMap, IKEAlyzer</p>
+                <div class="tags"><span class="tag">Flask</span><span class="tag">Hono.js</span><span class="tag">Node.js</span><span class="tag">PocketBase</span><span class="tag">Supabase</span><span class="tag">SQLite</span><span class="tag">SQL</span><span class="tag">Cloudflare Workers</span></div>
+            </div>
+            <div class="stack-item">
+                <h3><i class="fas fa-microchip"></i> Systems &amp; Graphics</h3>
+                <p>c_chat, a Unix shell, the 3D graphics engine</p>
+                <div class="tags"><span class="tag">C</span><span class="tag">POSIX</span><span class="tag">Sockets</span><span class="tag">GTK4</span><span class="tag">Java</span><span class="tag">Linux</span><span class="tag">Make</span></div>
+            </div>
+            <div class="stack-item">
+                <h3><i class="fas fa-mobile-alt"></i> Mobile &amp; Tools</h3>
+                <p>GoTravelAI, team workflows</p>
+                <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Bash</span></div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="wrap">
+        &copy; 2026 Rohan Sen · <a href="index.html">rohansen.com</a> · <a href="https://github.com/RohanSen08" target="_blank" rel="noopener">GitHub</a>
+    </div>
+</footer>
+
+</body>
+</html>
