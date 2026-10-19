@@ -168,6 +168,14 @@ footer {
     width: 100%;
 }
 
+/* Photo filling a .ratio box inside a card (keeps the lightbox via .gallery-img) */
+.ratio > .card-photo {
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    object-fit: cover;
+}
+
 .zoomable-photo {
     cursor: zoom-in;
     transition: transform 0.2s ease;
