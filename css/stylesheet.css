@@ -17,7 +17,6 @@ body {
     background: linear-gradient(135deg, #2b55c7 0%, #1a3baa 100%);
     color: white;
     padding: 4.75rem 0;
-    margin-bottom: 1.25rem;
 }
 
 .hero h1 {
@@ -191,19 +190,20 @@ footer {
     padding: 16px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom: 16px;
+    height: 100%;
 }
 
 .stats-card h2 {
     font-size: 3rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
 .stats-card p {
     font-size: 1.1rem;
     color: var(--secondary);
+    margin-bottom: 0;
 }
 
 .caption {
