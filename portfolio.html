@@ -148,6 +148,7 @@
             padding: 22px; display: flex; flex-direction: column;
         }
         .card h3 { margin: 0 0 2px; font-size: 1.05rem; }
+        .feature, .card { scroll-margin-top: 80px; }
         .card-media {
             margin: -22px -22px 18px; height: 210px; background: #000;
             border-radius: 12px 12px 0 0; overflow: hidden;
@@ -234,7 +235,7 @@
 
         <div class="features">
         <!-- Mighty Motion -->
-        <article class="feature">
+        <article class="feature" id="mighty-motion">
             <figure class="feature-media diagram">
                 <a href="static/mighty-motion-architecture.png" target="_blank" rel="noopener" title="Open full size">
                     <img src="static/mighty-motion-architecture.png" alt="Mighty Motion control pipeline: odometry feeds the localizer; the robot pose and a motion-profiled path feed pure pursuit, which outputs a target pose; x, y and heading PID controllers turn it into robot velocities; inverse kinematics converts those to wheel speeds for per-wheel feedforward motor controllers" width="1378" height="448" loading="lazy">
@@ -264,7 +265,7 @@
         </article>
 
         <!-- ProfiledPathGenerator -->
-        <article class="feature">
+        <article class="feature" id="profiled-path-generator">
             <figure class="feature-media field">
                 <svg viewBox="-2 -2 148 148" role="img" aria-label="Spline path generated through seven waypoints on a 144-inch FTC field">
                     <rect x="0" y="0" width="144" height="144" rx="3" class="field-bg"/>
@@ -397,7 +398,7 @@
         <p class="section-sub">Team and solo builds from software development, systems and graphics coursework, plus side projects.</p>
 
         <div class="grid">
-            <div class="card">
+            <div class="card" id="nerdymap">
                 <a class="card-media shot" href="static/nerdymap.webp" target="_blank" rel="noopener" title="Open full size">
                     <img src="static/nerdymap-card.jpg" alt="NerdyMap showing live subway, LIRR and Metro-North trains across New York City and Long Island, with a panel of nine active service alerts" width="900" height="613" loading="lazy">
                 </a>
@@ -422,7 +423,7 @@
                 <div class="foot"><a href="https://www.youtube.com/watch?v=tSkC4vpZ9Wk" target="_blank" rel="noopener">Demo video</a> · <a href="https://github.com/RohanSen08/c_chat" target="_blank" rel="noopener">GitHub</a></div>
             </div>
 
-            <div class="card">
+            <div class="card" id="graphics-engine">
                 <div class="card-media">
                     <img src="static/solar-system-render.gif" alt="Animated render from the engine: a Phong-shaded sun, an orbiting earth eased with accel, and a moon animated with tween" width="500" height="500" loading="lazy">
                 </div>

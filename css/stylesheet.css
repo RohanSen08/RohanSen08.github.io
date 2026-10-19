@@ -290,3 +290,92 @@ footer {
 .photo-placeholder small {
     color: var(--secondary);
 }
+
+/* Portfolio call-to-actions */
+.nav-link.nav-cta {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 30px;
+    padding: 0.4rem 1.1rem;
+    margin-left: 0.5rem;
+}
+
+.nav-link.nav-cta:hover, .nav-link.nav-cta:focus {
+    background-color: #1a3baa;
+    color: white;
+}
+
+@media (max-width: 991.98px) {
+    .nav-link.nav-cta {
+        display: inline-block;
+        margin: 0.5rem 0 0.75rem;
+    }
+}
+
+.hero .btn {
+    border-radius: 30px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+}
+
+.hero .hero-cta {
+    color: var(--primary);
+    padding: 0.65rem 1.5rem;
+    font-size: 1.05rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hero .hero-cta:hover {
+    color: #1a3baa;
+}
+
+/* Featured Work teaser */
+.featured-work {
+    padding-top: 2rem;
+}
+
+.work-card {
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.work-card:hover {
+    color: inherit;
+}
+
+.work-media {
+    height: 170px;
+    border-bottom: 1px solid #e3e7ef;
+}
+
+.work-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.work-diagram { background: white; padding: 12px; }
+.work-diagram img { object-fit: contain; }
+.work-field { background: var(--light); padding: 12px; }
+.work-field img { object-fit: contain; }
+.work-shot img { object-fit: cover; object-position: left center; }
+.work-render { background: black; }
+.work-render img { object-fit: contain; }
+
+.work-card h5 {
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.work-card p {
+    font-size: 0.92rem;
+    color: #4a5160;
+    margin-bottom: 0.75rem;
+}
+
+.work-stack {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+}

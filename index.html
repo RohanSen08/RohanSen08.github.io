@@ -49,9 +49,6 @@
           <a class="nav-link" href="#projects">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="portfolio.html">Portfolio</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#volunteer">Volunteer</a>
         </li>
         <li class="nav-item">
@@ -59,6 +56,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#travel">Travel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-cta" href="portfolio.html"><i class="fas fa-briefcase me-2"></i>Portfolio</a>
         </li>
       </ul>
     </div>
@@ -74,20 +74,78 @@
         <p class="mb-4">
           Information Systems and Computer Science student at Carnegie Mellon University (Class of 2030), research intern in health AI at the Feinstein Institutes for Medical Research, and former captain and lead programmer of FTC Team #8721 Mighty Mechanics.
         </p>
-        <div class="d-flex flex-wrap">
-          <a href="https://github.com/RohanSen08" class="btn btn-light me-3 mb-2" target="_blank">
+        <div class="d-flex flex-wrap align-items-center">
+          <a href="portfolio.html" class="btn btn-light hero-cta me-3 mb-2">
+            <i class="fas fa-briefcase me-2"></i>View my portfolio<i class="fas fa-arrow-right ms-2"></i>
+          </a>
+          <a href="https://github.com/RohanSen08" class="btn btn-outline-light me-3 mb-2" target="_blank">
             <i class="fab fa-github me-2"></i>GitHub
           </a>
-          <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" class="btn btn-light me-3 mb-2" target="_blank">
+          <a href="https://www.linkedin.com/in/rohan-sen-4a558631a/" class="btn btn-outline-light me-3 mb-2" target="_blank">
             <i class="fab fa-linkedin me-2"></i>LinkedIn
           </a>
-          <a href="mailto:rohanhenrysen@gmail.com" class="btn btn-light me-3 mb-2">
+          <a href="mailto:rohanhenrysen@gmail.com" class="btn btn-outline-light me-3 mb-2">
             <i class="fas fa-envelope me-2"></i>Email
           </a>
         </div>
       </div>
       <div class="col-lg-4 text-center">
         <img src="static/PHOTO-2024-08-07-23-00-30.jpg" alt="Rohan Sen" class="profile-img" style="margin: 0 auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Work (teaser for portfolio.html) -->
+<section class="section featured-work" id="featured-work">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+      <div>
+        <h2 class="section-title mb-3">Featured Work</h2>
+        <p class="text-muted mb-0">A few of the projects I'm proudest of. The portfolio has the full write-ups and tech stacks.</p>
+      </div>
+      <a href="portfolio.html" class="btn btn-primary mt-3">Explore the full portfolio<i class="fas fa-arrow-right ms-2"></i></a>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <a class="card work-card" href="portfolio.html#mighty-motion">
+          <div class="work-media work-diagram"><img src="static/mighty-motion-architecture.png" alt="Mighty Motion control pipeline diagram" loading="lazy"></div>
+          <div class="card-body">
+            <h5>Mighty Motion</h5>
+            <p>Custom FTC motion-control library behind our 2026 NYC Championship and Control Award.</p>
+            <span class="work-stack">Java · Kalman filters · Control</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <a class="card work-card" href="portfolio.html#profiled-path-generator">
+          <div class="work-media work-field"><img src="static/ppg-path.svg" alt="Spline path through seven waypoints on an FTC field" loading="lazy"></div>
+          <div class="card-body">
+            <h5>ProfiledPathGenerator</h5>
+            <p>Fits C²-continuous cubic splines through autonomous waypoints by solving one linear system.</p>
+            <span class="work-stack">Java · EJML · Linear algebra</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <a class="card work-card" href="portfolio.html#nerdymap">
+          <div class="work-media work-shot"><img src="static/nerdymap-card.jpg" alt="NerdyMap showing live NYC trains and service alerts" loading="lazy"></div>
+          <div class="card-body">
+            <h5>NerdyMap</h5>
+            <p>Live positions, delays and alerts for NYC subway, LIRR, Metro-North and NJ Transit.</p>
+            <span class="work-stack">Flask · GTFS-Realtime · Google Maps</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <a class="card work-card" href="portfolio.html#graphics-engine">
+          <div class="work-media work-render"><img src="static/solar-system-render.gif" alt="Phong-shaded solar system animation rendered by the engine" loading="lazy"></div>
+          <div class="card-body">
+            <h5>3D Graphics Engine</h5>
+            <p>Software renderer with Phong shading and an animation language I extended with easing and tweening.</p>
+            <span class="work-stack">Java · Rendering · Parsers</span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
