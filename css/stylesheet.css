@@ -176,6 +176,23 @@ footer {
     object-fit: cover;
 }
 
+/* Robotics photo collage: one wide photo over two square-ish tiles */
+.robotics-photos .gallery-img {
+    height: 250px;
+}
+
+.robotics-photos .photo-wide {
+    object-position: center 40%;
+}
+
+.robotics-photos .photo-trophies {
+    object-position: center 30%;
+}
+
+.robotics-photos .caption {
+    margin-bottom: 0;
+}
+
 .zoomable-photo {
     cursor: zoom-in;
     transition: transform 0.2s ease;
